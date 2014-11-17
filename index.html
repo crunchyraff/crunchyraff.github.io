@@ -7,7 +7,8 @@
     <meta name="description" content="Crunchyraff.github.io : Main">
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
+    <script src="jquery-1.11.1.min.js"></script>
+    
     <title>Crunchyraff.github.io</title>
   </head>
 
@@ -30,16 +31,38 @@
       <section id="main_content" class="inner">
 
       <h1 id="random">sample text</h1>
-
+      <ul>
+        <li>
+          <h3 id="choice1"></h3>
+        </li>
+        <li>
+          <h3 id="choice2"></h3>
+        </li>
+        <li>
+          <h3 id="choice3"></h3>
+        </li>
+      </ul>
       <button type="button" onclick="myFunction()">San tayo kain?</button>
       
       <script>
         function myFunction() {
-          var choices = ["Bon Chon","KFC","McDonalds","Mazza","Dell's"];
-          var rand = choices[Math.round(Math.random() * 4)];
-          document.getElementById("random").innerHTML = rand;
+          var choices = ["Bon Chon","KFC","McDonalds","Mazza","JT's","Jollibee Delivery", "BCI"];
+          var chosen = [];
+          var rand = choices[Math.round(Math.random() * choices.length)];
+          var counter = 0;
+          
+          do {
+            
+            if(!$.inArray(rand, chosen)) {
+              chosen.push(rand);
+            }
+            counter++;
+          } while(counter < 3)
+          
+          document.getElementById("choice1").innerHTML = chosen[0];
 //          alert(rand);
         }
+        function addToArr()
       </script>
 
       </section>
