@@ -31,7 +31,8 @@
       <section id="main_content" class="inner">
 
       <button type="button" onclick="myFunction()">San tayo kain?</button>
-      <input type="checkbox" id="friday" value="friday">
+      <br>
+        <label><input type="checkbox" id="friday" value="friday">Friday</label>
       <br>
       <ol>
         <li>
@@ -79,7 +80,7 @@
           var rand;
           var counter = 0;
           
-          if(document.getElementById("friday").value="friday") {
+          if(document.getElementById("friday").checked) {
             choices = choices.concat(everyday,friday);
           }
           else {
