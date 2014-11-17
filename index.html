@@ -53,10 +53,9 @@
           var counter = 0;
           
           while(counter < 3) {
-            alert(counter);
             rand = choices[Math.round(Math.random() * choices.length)];
-            alert(counter);
-            if($.inArray(rand, chosen) < 0) {
+            alert(rand);
+            if(chosen.indexOf(rand) < 0) {
               chosen.push(rand);
             }
             alert(counter);
