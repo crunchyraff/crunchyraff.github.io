@@ -72,7 +72,7 @@
               "Lucky's",
               "Chicken & Beer",
               "Wursty Wursty",
-              "S&R",
+              "S&R"
             ];
           var choices = [];
           var chosen = [];
@@ -80,10 +80,10 @@
           var counter = 0;
           
           if(document.getElementById("friday").value="friday") {
-            choices.concat(everyday,friday);
+            choices = choices.concat(everyday,friday);
           }
           else {
-            choices = everyday;
+            choices = choices.concat(everyday);
           }
           
           while(counter < 3) {
