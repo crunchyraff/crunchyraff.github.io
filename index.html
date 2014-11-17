@@ -49,18 +49,16 @@
         function myFunction() {
           var choices = ["Bon Chon","KFC","McDonalds","Mazza","JT's","Jollibee Delivery", "BCI"];
           var chosen = [];
-          var rand = choices[Math.round(Math.random() * choices.length)];
+          var rand;
           var counter = 0;
           
-          alert(chosen.length);          
-          do {
-            
-            if(!(JQuery.inArray(rand, chosen))) {
+          while(counter < 3) {
+            rand = choices[Math.round(Math.random() * choices.length)];
+            if(JQuery.inArray(rand, chosen) < 0) {
               chosen.push(rand);
             }
             counter++;
-          alert(chosen.length);          
-          } while(counter < 3)
+          }
           document.getElementById("choice1").innerHTML = chosen[0];
 //          alert(rand);
         }
