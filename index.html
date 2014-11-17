@@ -51,9 +51,10 @@
           var rand = choices[Math.round(Math.random() * choices.length)];
           var counter = 0;
           
+          alert(chosen.length);          
           do {
             
-            if(!$.inArray(rand, chosen)) {
+            if(!(JQuery.inArray(rand, chosen))) {
               chosen.push(rand);
             }
             counter++;
