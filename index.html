@@ -53,6 +53,7 @@
           var counter = 0;
           
           while(counter < 3) {
+            alert(counter);
             rand = choices[Math.round(Math.random() * choices.length)];
             if(JQuery.inArray(rand, chosen) < 0) {
               chosen.push(rand);
