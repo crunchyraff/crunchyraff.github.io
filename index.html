@@ -31,6 +31,7 @@
       <section id="main_content" class="inner">
 
       <button type="button" onclick="myFunction()">San tayo kain?</button>
+      <input type="checkbox" id="friday" value="friday">
       <br>
       <ol>
         <li>
@@ -46,10 +47,44 @@
       
       <script>
         function myFunction() {
-          var choices = ["Bon Chon","KFC","McDonalds","Mazza","JT's","Jollibee Delivery", "BCI"];
+          var everyday = [
+            "Bon Chon",
+            "KFC",
+            "McDonalds",
+            "JT's",
+            "Jollibee Delivery",
+            "BCI",
+            "Zarks",
+            "Razon's",
+            "Mazza",
+            "Army Navy",
+            "Yellowcab",
+            "2nd Floor"
+          ];
+          var friday = [
+              "Trattoria",
+              "Kuse",
+              "Pho Hoa",
+              "Little Asia",
+              "Ukkokei",
+              "Banapple",
+              "Main Street",
+              "Lucky's",
+              "Chicken & Beer",
+              "Wursty Wursty",
+              "S&R",
+            ];
+          var choices = [];
           var chosen = [];
           var rand;
           var counter = 0;
+          
+          if(document.getElementById("friday").value="friday") {
+            choices.concat(everyday,friday);
+          }
+          else {
+            choices = everyday;
+          }
           
           while(counter < 3) {
             rand = choices[Math.round(Math.random() * (choices.length-1))];
