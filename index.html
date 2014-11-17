@@ -30,6 +30,8 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
 
+      <button type="button" onclick="myFunction()">San tayo kain?</button>
+
       <h1 id="random">sample text</h1>
       <ul>
         <li>
@@ -42,7 +44,6 @@
           <h3 id="choice3"></h3>
         </li>
       </ul>
-      <button type="button" onclick="myFunction()">San tayo kain?</button>
       
       <script>
         function myFunction() {
@@ -58,8 +59,8 @@
               chosen.push(rand);
             }
             counter++;
-          } while(counter < 3)
           alert(chosen.length);          
+          } while(counter < 3)
           document.getElementById("choice1").innerHTML = chosen[0];
 //          alert(rand);
         }
