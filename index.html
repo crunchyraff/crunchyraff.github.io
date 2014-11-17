@@ -52,7 +52,7 @@
           var rand;
           var counter = 0;
           
-          while(counter < 2) {
+          while(counter < 3) {
             rand = choices[Math.round(Math.random() * choices.length)];
             if(chosen.indexOf(rand) < 0) {
               chosen.push(rand);
@@ -60,8 +60,8 @@
             }
           }
           document.getElementById("choice1").innerHTML = chosen[0];
-          document.getElementById("choice2").innerHTML = chosen[0];
-          document.getElementById("choice3").innerHTML = chosen[0];
+          document.getElementById("choice2").innerHTML = chosen[1];
+          document.getElementById("choice3").innerHTML = chosen[2];
 //          alert(rand);
         }
       </script>
