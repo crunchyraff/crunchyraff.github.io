@@ -29,7 +29,7 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
 
-      <p id="random"></p>
+      <p id="random">sample text</p>
 
       <button type="button" onclick="myFunction()">Submit</button>
       
@@ -37,7 +37,7 @@
         function myFunction() {
           var choices = ["Bon Chon","KFC","McDonalds","Mazza","Dell's"];
           function myFunction() {
-            document.getElementById("random").innerHTML = choices[Math.round(Math.random() * 4)];
+            document.getElementById("random").value = choices[Math.round(Math.random() * 4)];
           }
         }
       </script>
