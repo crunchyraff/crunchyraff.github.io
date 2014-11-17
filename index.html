@@ -36,7 +36,9 @@
       <script>
         function myFunction() {
           var choices = ["Bon Chon","KFC","McDonalds","Mazza","Dell's"];
-          document.getElementById("random").text = choices[Math.round(Math.random() * 4)];
+          var rand = choices[Math.round(Math.random() * 4)];
+          document.getElementById("random").value = rand;
+          alert(rand);
         }
       </script>
 
