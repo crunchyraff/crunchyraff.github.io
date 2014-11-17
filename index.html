@@ -52,14 +52,12 @@
           var rand;
           var counter = 0;
           
-          while(counter < 3) {
+          while(counter < 2) {
             rand = choices[Math.round(Math.random() * choices.length)];
-            alert(rand);
             if(chosen.indexOf(rand) < 0) {
               chosen.push(rand);
+              counter++;
             }
-            alert(counter);
-            counter++;
           }
           document.getElementById("choice1").innerHTML = chosen[0];
 //          alert(rand);
