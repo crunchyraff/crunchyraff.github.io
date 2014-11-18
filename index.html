@@ -95,11 +95,13 @@
               }
           }
           
-          while(counter < 3) {
-            rand = choices[Math.round(Math.random() * (choices.length-1))];
-            if(chosen.indexOf(rand) < 0) {
-              chosen.push(rand);
-              counter++;
+          if(choices.length > 2) {
+            while(counter < 3) {
+              rand = choices[Math.round(Math.random() * (choices.length-1))];
+              if(chosen.indexOf(rand) < 0) {
+                chosen.push(rand);
+                counter++;
+              }
             }
           }
           document.getElementById("choice1").innerHTML = chosen[0];
