@@ -86,45 +86,15 @@
           var rand;
           var counter = 0;
           
-          $selected = $("input[name=selection]:checked");
+          $selection = $("input[name=selection]:checked");
+          $price = $("input[name=price]:checked");
           
-          alert($selected.val());
-
-          if(document.getElementById("Friday").checked) {
-            for (var a in places) {
-              if(places[a]['day'] = "friday") {
-                if(document.getElementById("High").checked) {
-                  for (var a in places) {
-                      choices.push(places[a]['name']);
-                  }
-                }
-                else {
-                  for (var a in places) {
-                    if(places[a]['price'] = "low") {
-                      choices.push(places[a]['name']);
-                    }
-                  }
-                }
+          for (var a in places) {
+              if(places[a]['selection'] = $selection && places[a]['price'] = $price) {
+                choices.push(places[a]['name']);
               }
-            }
           }
-          else {
-            for (var a in places) {
-              if(document.getElementById("High").checked) {
-                for (var a in places) {
-                    choices.push(places[a]['name']);
-                }
-              }
-              else {
-                for (var a in places) {
-                  if(places[a]['price'] = "low") {
-                    choices.push(places[a]['name']);
-                  }
-                }
-              }
-            }
-          }
-
+          
           while(counter < 3) {
             rand = choices[Math.round(Math.random() * (choices.length-1))];
             if(chosen.indexOf(rand) < 0) {
