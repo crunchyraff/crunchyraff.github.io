@@ -7,7 +7,7 @@
     <meta name="description" content="Crunchyraff.github.io : Main">
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"> -->
     <script src="jquery-1.11.1.min.js"></script>
     
     <title>Crunchyraff.github.io</title>
@@ -76,12 +76,21 @@
               "S&R"
             ];
           var places = [
-              {"name":"","price":"high","day":""}
+              {'name':"Trattoria",'price':"high",'day':"friday"},
+              {'name':"Kuse",'price':"high",'day':"friday"},
+              {'name':"Pho Hoa",'price':"high",'day':"friday"},
+              {'name':"Little Asia",'price':"high",'day':"friday"},
+              {'name':"Ukkokei",'price':"high",'day':"friday"},
+              {'name':"Banapple",'price':"high",'day':"friday"}
             ];
           var choices = [];
           var chosen = [];
           var rand;
           var counter = 0;
+          
+          for (var a in places) {
+            alert(a['name']);
+          }
           
           if(document.getElementById("friday").checked) {
             choices = choices.concat(everyday,friday);
