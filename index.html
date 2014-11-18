@@ -91,9 +91,7 @@
               if(places[a]['day'] = "friday") {
                 if(document.getElementById("High").checked) {
                   for (var a in places) {
-                    if(places[a]['price'] = "high") {
                       choices.push(places[a]['name']);
-                    }
                   }
                 }
                 else {
@@ -108,36 +106,17 @@
           }
           else {
             for (var a in places) {
-              if(places[a]['day'] = "Everyday") {
-                if(document.getElementById("High").checked) {
-                  for (var a in places) {
-                    if(places[a]['price'] = "high") {
-                      choices.push(places[a]['name']);
-                    }
-                  }
-                }
-                else {
-                  for (var a in places) {
-                    if(places[a]['price'] = "low") {
-                      choices.push(places[a]['name']);
-                    }
-                  }
+              if(document.getElementById("High").checked) {
+                for (var a in places) {
+                    choices.push(places[a]['name']);
                 }
               }
-            }
-          }
-
-          if(document.getElementById("High").checked) {
-            for (var a in places) {
-              if(places[a]['price'] = "high") {
-                choices.push(places[a]['name']);
-              }
-            }
-          }
-          else {
-            for (var a in places) {
-              if(places[a]['price'] = "low") {
-                choices.push(places[a]['name']);
+              else {
+                for (var a in places) {
+                  if(places[a]['price'] = "low") {
+                    choices.push(places[a]['name']);
+                  }
+                }
               }
             }
           }
