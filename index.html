@@ -86,7 +86,9 @@
           var rand;
           var counter = 0;
           
-          alert($("[name='selection'] : checked"));
+          $selected = $("[name='selection'] : checked");
+          
+          alert($selected);
 
           if(document.getElementById("Friday").checked) {
             for (var a in places) {
