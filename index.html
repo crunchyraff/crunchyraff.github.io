@@ -90,6 +90,26 @@
           $price = $("input[name=price]:checked").val();
           
           for (var a in places) {
+              if($selection == 'friday') {
+                if($price == 'high') {
+                  choices.push(places[a]['name']);
+                }
+                else {
+                  if(places[a]['price'] == 'low') {
+                    choices.push(places[a]['name']);
+                  }
+                }
+              }
+              else {
+                if($price == 'high' && places[a]['day'] == 'everyday') {
+                  choices.push(places[a]['name']);
+                }
+                else {
+                  if(places[a]['price'] == 'low' && places[a]['day'] == 'everyday') {
+                    choices.push(places[a]['name']);
+                  }
+                }
+              }
               if(places[a]['day'] == $selection && places[a]['price'] == $price) {
                 choices.push(places[a]['name']);
               }
