@@ -88,7 +88,7 @@
 
           if(document.getElementById("Friday").checked) {
             for (var a in places) {
-              if(places[a]['day'] = "Friday") {
+              if(places[a]['day'] = "friday") {
                 choices.push(places[a]['name']);
               }
             }
@@ -103,19 +103,19 @@
 
           if(document.getElementById("High").checked) {
             for (var a in places) {
-              if(places[a]['price'] = "High") {
+              if(places[a]['price'] = "high") {
                 choices.push(places[a]['name']);
               }
             }
           }
           else {
             for (var a in places) {
-              if(places[a]['price'] = "Low") {
+              if(places[a]['price'] = "low") {
                 choices.push(places[a]['name']);
               }
             }
           }
-
+          alert("i got here");
           
           while(counter < 3) {
             rand = choices[Math.round(Math.random() * (choices.length-1))];
