@@ -88,12 +88,16 @@
           
           $selection = $("input[name=selection]:checked");
           $price = $("input[name=price]:checked");
+
+          alert($price);
           
           for (var a in places) {
               if(places[a]['selection'] == $selection && places[a]['price'] == $price) {
                 choices.push(places[a]['name']);
               }
           }
+          
+          alert("got here");
           
           if(choices.length > 2) {
             while(counter < 3) {
