@@ -90,7 +90,7 @@
           $price = $("input[name=price]:checked");
           
           for (var a in places) {
-              if(places[a]['selection'] = $selection && places[a]['price'] = $price) {
+              if(places[a]['selection'] == $selection && places[a]['price'] == $price) {
                 choices.push(places[a]['name']);
               }
           }
