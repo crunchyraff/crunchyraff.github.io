@@ -86,8 +86,8 @@
           var rand;
           var counter = 0;
           
-          $selection = $("input[name=selection]:checked");
-          $price = $("input[name=price]:checked");
+          $selection = $("input[name=selection]:checked").val();
+          $price = $("input[name=price]:checked").val();
           
           for (var a in places) {
               if(places[a]['day'] == $selection && places[a]['price'] == $price) {
