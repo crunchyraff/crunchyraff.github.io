@@ -67,17 +67,17 @@
               {'name': "Lucky's", 'price': "high", 'day': "friday"},
               {'name': "Chicken & Beer", 'price': "high", 'day': "friday"},
               {'name': "Wursty Wursty", 'price': "high", 'day': "friday"},
-              {'name': "S&R", 'price': "high", 'day': "friday"}
-              {'name': "Bon Chon", 'price': "low", 'day': "everyday"}
-              {'name': "KFC", 'price': "low", 'day': "everyday"}
-              {'name': "McDonalds", 'price': "low", 'day': "everyday"}
-              {'name': "JT's", 'price': "low", 'day': "everyday"}
-              {'name': "Jollibee", 'price': "low", 'day': "everyday"}
-              {'name': "Bacolod Chicken Inasal", 'price': "low", 'day': "everyday"}
-              {'name': "Zarks", 'price': "low", 'day': "everyday"}
-              {'name': "Razon's", 'price': "low", 'day': "everyday"}
-              {'name': "Army Navy", 'price': "low", 'day': "everyday"}
-              {'name': "Yellowcab", 'price': "low", 'day': "everyday"}
+              {'name': "S&R", 'price': "high", 'day': "friday"},
+              {'name': "Bon Chon", 'price': "low", 'day': "everyday"},
+              {'name': "KFC", 'price': "low", 'day': "everyday"},
+              {'name': "McDonalds", 'price': "low", 'day': "everyday"},
+              {'name': "JT's", 'price': "low", 'day': "everyday"},
+              {'name': "Jollibee", 'price': "low", 'day': "everyday"},
+              {'name': "Bacolod Chicken Inasal", 'price': "low", 'day': "everyday"},
+              {'name': "Zarks", 'price': "low", 'day': "everyday"},
+              {'name': "Razon's", 'price': "low", 'day': "everyday"},
+              {'name': "Army Navy", 'price': "low", 'day': "everyday"},
+              {'name': "Yellowcab", 'price': "low", 'day': "everyday"},
               {'name': "2nd Floor", 'price': "low", 'day': "everyday"}
             ];
             
@@ -85,6 +85,8 @@
           var chosen = [];
           var rand;
           var counter = 0;
+
+          alert("i got here");
 
           if(document.getElementById("Friday").checked) {
             for (var a in places) {
@@ -115,8 +117,7 @@
               }
             }
           }
-          alert("i got here");
-          
+
           while(counter < 3) {
             rand = choices[Math.round(Math.random() * (choices.length-1))];
             if(chosen.indexOf(rand) < 0) {
