@@ -34,10 +34,6 @@
       <button type="button" onclick="myFunction()">San tayo kain?</button>
       <br>
         <form>
-          <input type="radio" name="selection" id="Everyday" value="everyday" checked>Everyday<br>
-          <input type="radio" name="selection" id="Friday" value="friday">Friday
-        </form>
-        <form>
           <input type="radio" name="price" id="High" value="high" checked>High<br>
           <input type="radio" name="price" id="Low" value="low">Low
         </form>
@@ -59,29 +55,30 @@
       <script>
         function myFunction() {
           var places = [
-              {'name': "Trattoria",         'price': "high", 'day': "friday"},
-              {'name': "Kuse",              'price': "high", 'day': "friday"},
-              {'name': "Pho Hoa",           'price': "high", 'day': "friday"},
-              {'name': "Little Asia",       'price': "high", 'day': "friday"},
-              {'name': "Ukkokei",           'price': "high", 'day': "friday"},
-              {'name': "Banapple",          'price': "high", 'day': "friday"},
-              {'name': "Main Street",       'price': "high", 'day': "friday"},
-              {'name': "Lucky's",           'price': "high", 'day': "friday"},
-              {'name': "Chicken & Beer",    'price': "high", 'day': "friday"},
-              {'name': "Wursty Wursty",     'price': "high", 'day': "friday"},
-              {'name': "S&R",               'price': "high", 'day': "friday"},
-              {'name': "Bon Chon",          'price': "low",  'day': "everyday"},
-              {'name': "KFC",               'price': "low",  'day': "everyday"},
-              {'name': "McDonald's",         'price': "low",  'day': "everyday"},
-              {'name': "JT's",              'price': "low",  'day': "everyday"},
-              {'name': "Jollibee Delivery", 'price': "low",  'day': "everyday"},
-              {'name': "Bacolod Inasal",    'price': "low",  'day': "everyday"},
-              {'name': "Zark's",            'price': "low",  'day': "everyday"},
-              {'name': "Razon's",           'price': "low",  'day': "everyday"},
-              {'name': "Army Navy",         'price': "high", 'day': "everyday"},
-              {'name': "Yellowcab",         'price': "high", 'day': "everyday"},
-              {'name': "Amici",             'price': "high", 'day': "friday"},
-              {'name': "Tapa-King Delivery",'price': "low",  'day': "everyday"}
+              {'name': "Trattoria",         'price': "high"},
+              {'name': "Kuse",              'price': "high"},
+              {'name': "Pho Hoa",           'price': "high"},
+              {'name': "Little Asia",       'price': "high"},
+              {'name': "Ukkokei",           'price': "high"},
+              {'name': "Banapple",          'price': "high"},
+              {'name': "Main Street",       'price': "high"},
+              {'name': "Lucky's",           'price': "high"},
+              {'name': "Chicken & Beer",    'price': "high"},
+              {'name': "Wursty Wursty",     'price': "high"},
+              {'name': "S&R",               'price': "high"},
+              {'name': "Bon Chon",          'price': "low"},
+              {'name': "KFC",               'price': "low"},
+              {'name': "McDonald's",        'price': "low"},
+              {'name': "JT's",              'price': "low"},
+              {'name': "Jollibee Delivery", 'price': "low"},
+              {'name': "Bacolod Inasal",    'price': "low"},
+              {'name': "Zark's",            'price': "low"},
+              {'name': "Razon's",           'price': "low"},
+              {'name': "Off the Grid",      'price': "high"},
+              {'name': "Army Navy",         'price': "high"},
+              {'name': "Yellowcab",         'price': "high"},
+              {'name': "Amici",             'price': "high"},
+              {'name': "Tapa-King Delivery",'price': "low"}
             ];
             
           var choices = [];
@@ -93,28 +90,13 @@
           $price = $("input[name=price]:checked").val();
           
           for (var a in places) {
-              if($selection == 'friday') {
-                if($price == 'high') {
-                  choices.push(places[a]['name']);
-                }
-                else {
-                  if(places[a]['price'] == 'low') {
-                    choices.push(places[a]['name']);
-                  }
-                }
+              if($price == 'high') {
+                choices.push(places[a]['name']);
               }
               else {
-                if($price == 'high' && places[a]['day'] == 'everyday') {
+                if(places[a]['price'] == 'low') {
                   choices.push(places[a]['name']);
                 }
-                else {
-                  if(places[a]['price'] == 'low' && places[a]['day'] == 'everyday') {
-                    choices.push(places[a]['name']);
-                  }
-                }
-              }
-              if(places[a]['day'] == $selection && places[a]['price'] == $price) {
-                choices.push(places[a]['name']);
               }
           }
           
