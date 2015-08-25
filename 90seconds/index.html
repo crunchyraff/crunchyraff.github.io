@@ -47,6 +47,7 @@
         radius = radius * 0.90;
         setInterval(drawClock, 1000);
         window.addEventListener("keypress", checkKeyPressed, false);
+        window.addEventListener("click", checkKeyPressed, false);
         
         function drawClock() {
           drawFace(ctx, radius);
