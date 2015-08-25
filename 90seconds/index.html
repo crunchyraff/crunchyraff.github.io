@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Crunchyraff.github.io : Main">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"> -->
+    <script src="javascripts/jquery-1.11.1.min.js"></script>
+
+    <title>Crunchyraff.github.io</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/crunchyraff">View on GitHub</a>
+
+          <h1 id="project_title">90 Second Analog Timer</h1>
+          <h2 id="project_tagline">by crunchyraff</h2>
+
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer" style="background:#191c26">
+      <section id="main_content" class="inner">
+
+        <canvas id="canvas" width="600" height="600">
+        </canvas>
+
+        <script>
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+        var radius = canvas.height / 2;
+        var col1 = '#660033';     //border
+        var col2 = '#ffd97b';     //clock face
+        var col3 = '#a60027';     //hand
+        var col4 = '#191c26';  
+        var col5 = '#e55029';
+        var secs = 0;
+        var mark = 0;
+        ctx.translate(radius, radius);
+        radius = radius * 0.90;
+        setInterval(drawClock, 1000);
+        window.addEventListener("keypress", checkKeyPressed, false);
+        
+        function drawClock() {
+          drawFace(ctx, radius);
+          drawNumbers(ctx, radius);
+          drawTime(ctx, radius);
+        }
+        
+        function drawFace(ctx, radius) {
+          ctx.beginPath();
+          ctx.arc(0, 0, radius, 0, 2*Math.PI);
+          ctx.fillStyle = col2;
+          ctx.fill();
+          ctx.strokeStyle = col1;
+          ctx.lineWidth = radius*0.1;
+          ctx.stroke();
+          ctx.beginPath();
+          ctx.arc(0, 0, radius*0.05, 0, 2*Math.PI);
+          ctx.fillStyle = col3;
+          ctx.fill();
+        }
+        
+        function drawNumbers(ctx, radius) {
+          var ang;
+          var num;
+          ctx.font = radius*0.15 + "px arial";
+          ctx.textBaseline="middle";
+          ctx.textAlign="center";
+          for(num = 1; num < 19; num++){
+            ang = num * Math.PI / 9;
+            ctx.rotate(ang);
+            ctx.translate(0, -radius*0.85);
+            ctx.rotate(-ang);
+        //    ctx.fillText(num.toString(), 0, 0);
+            ctx.beginPath();
+            ctx.arc(0, 0, radius*0.02, 0, 2*Math.PI);
+            ctx.fillStyle = col5;
+            ctx.fill();
+        //    ctx.fillText('.', 0, 0);
+            ctx.rotate(ang);
+            ctx.translate(0, radius*0.85);
+            ctx.rotate(-ang);
+        
+          }
+        }
+        
+        function drawTime(ctx, radius){
+            var second = 0;
+            // second
+            secs = (secs + 1) % 90;
+            // second=(second*Math.PI/45);
+            second=(secs*Math.PI/45);
+            drawHand(ctx, second, radius*0.72, radius*0.06);
+
+            var markCalc = 0;
+            markCalc=(mark*Math.PI/45);
+            drawMark(ctx, markCalc)
+        }
+        
+        function drawHand(ctx, pos, length, width) {
+            ctx.strokeStyle = col3;
+            ctx.beginPath();
+            ctx.lineWidth = width;
+            ctx.lineCap = "round";
+            ctx.moveTo(0,0);
+            ctx.rotate(pos);
+            ctx.lineTo(0, -length);
+            ctx.stroke();
+            ctx.rotate(-pos);
+        }
+        
+        function drawMark(ctx, pos) {
+            ctx.strokeStyle = col5;
+            ctx.beginPath();
+            ctx.lineWidth = radius*0.03;
+            ctx.lineCap = "round";
+            ctx.moveTo(0,0);
+            ctx.rotate(pos);
+            ctx.lineTo(0, -radius*0.7);
+            ctx.stroke();
+            ctx.rotate(-pos);
+        }
+        
+        function checkKeyPressed(e) {
+            mark = secs;
+        }
+        </script>
+
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
