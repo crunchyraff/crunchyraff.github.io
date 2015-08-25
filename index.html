@@ -92,15 +92,16 @@
         }
         
         function drawTime(ctx, radius){
-            var now = new Date();
-            var hour = now.getHours();
-            var minute = now.getMinutes();
-            var second = now.getSeconds();
+            var second = 0;
             // second
             secs = (secs + 1) % 90;
             // second=(second*Math.PI/45);
             second=(secs*Math.PI/45);
             drawHand(ctx, second, radius*0.72, radius*0.06);
+
+            var markCalc = 0;
+            markCalc=(mark*Math.PI/45);
+            drawMark(ctx, markCalc)
         }
         
         function drawHand(ctx, pos, length, width) {
@@ -111,6 +112,18 @@
             ctx.moveTo(0,0);
             ctx.rotate(pos);
             ctx.lineTo(0, -length);
+            ctx.stroke();
+            ctx.rotate(-pos);
+        }
+        
+        function drawMark(ctx, pos) {
+            ctx.strokeStyle = col5;
+            ctx.beginPath();
+            ctx.lineWidth = radius*0.03;
+            ctx.lineCap = "round";
+            ctx.moveTo(0,0);
+            ctx.rotate(pos);
+            ctx.lineTo(0, -radius*0.7);
             ctx.stroke();
             ctx.rotate(-pos);
         }
