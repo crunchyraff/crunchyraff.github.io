@@ -27,23 +27,21 @@
     </div>
 
     <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
+    <div id="main_content_wrap" class="outer" background='#4a3652'>
       <section id="main_content" class="inner">
 
-        <canvas id="canvas" width="600" height="600"
-        style="background-color:#4a3652">
+        <canvas id="canvas" width="600" height="600">
         </canvas>
 
         <script>
         var canvas = document.getElementById("canvas");
         var ctx = canvas.getContext("2d");
         var radius = canvas.height / 2;
-        var col1 = '#9a1e33';
-        var col2 = '#fdd568';     //clock face
-        var col3 = '#982a40';     //hand
+        var col1 = '#714';     //border
+        var col2 = '#fdde71';     //clock face
+        var col3 = '#b33';     //hand
         var col4 = '#a74134';  
-        var col5 = '#841b2b';
-        var secs = 0;
+        var col5 = '#4a3652';        var secs = 0;
         ctx.translate(radius, radius);
         radius = radius * 0.90;
         setInterval(drawClock, 1000);
@@ -63,7 +61,7 @@
           ctx.lineWidth = radius*0.1;
           ctx.stroke();
           ctx.beginPath();
-          ctx.arc(0, 0, radius*0.1, 0, 2*Math.PI);
+          ctx.arc(0, 0, radius*0.05, 0, 2*Math.PI);
           ctx.fillStyle = col3;
           ctx.fill();
         }
@@ -81,7 +79,7 @@
             ctx.rotate(-ang);
         //    ctx.fillText(num.toString(), 0, 0);
             ctx.beginPath();
-            ctx.arc(0, 0, radius*0.04, 0, 2*Math.PI);
+            ctx.arc(0, 0, radius*0.02, 0, 2*Math.PI);
             ctx.fillStyle = col1;
             ctx.fill();
         //    ctx.fillText('.', 0, 0);
