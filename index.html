@@ -41,7 +41,7 @@
         var col2 = '#ffd97b';     //clock face
         var col3 = '#a60027';     //hand
         var col4 = '#191c26';  
-        var col5 = '#4a3652';
+        var col5 = '#e55029';
         var secs = 0;
         ctx.translate(radius, radius);
         radius = radius * 0.90;
@@ -81,7 +81,7 @@
         //    ctx.fillText(num.toString(), 0, 0);
             ctx.beginPath();
             ctx.arc(0, 0, radius*0.02, 0, 2*Math.PI);
-            ctx.fillStyle = col1;
+            ctx.fillStyle = col5;
             ctx.fill();
         //    ctx.fillText('.', 0, 0);
             ctx.rotate(ang);
@@ -100,7 +100,7 @@
             secs = (secs + 1) % 90;
             // second=(second*Math.PI/45);
             second=(secs*Math.PI/45);
-            drawHand(ctx, second, radius*0.72, radius*0.08);
+            drawHand(ctx, second, radius*0.72, radius*0.06);
         }
         
         function drawHand(ctx, pos, length, width) {
