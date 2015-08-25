@@ -43,9 +43,11 @@
         var col4 = '#191c26';  
         var col5 = '#e55029';
         var secs = 0;
+        var mark = 0;
         ctx.translate(radius, radius);
         radius = radius * 0.90;
         setInterval(drawClock, 1000);
+        window.addEventListener("keypress", checkKeyPressed, false);
         
         function drawClock() {
           drawFace(ctx, radius);
@@ -126,6 +128,10 @@
             ctx.lineTo(0, -radius*0.7);
             ctx.stroke();
             ctx.rotate(-pos);
+        }
+        
+        function checkKeyPressed(e) {
+            mark = secs;
         }
         </script>
 
