@@ -58,7 +58,7 @@
         function drawFace(ctx, radius) {
           ctx.beginPath();
           ctx.arc(0, 0, radius, 0, 2*Math.PI);
-          if(Math.abs(secs - mark) <= 3 || Math.abs(secs-mark) >= 87)
+          if(Math.abs(secs - mark) <= 2 || Math.abs(secs-mark) >= 87)
             ctx.fillStyle = col4;
           else
             ctx.fillStyle = col2;
