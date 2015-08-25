@@ -37,9 +37,9 @@
         var ctx = canvas.getContext("2d");
         var radius = canvas.height / 2;
         var col1 = '#660033';     //border
-        var col2 = '#ffd97b';     //clock face
+        var col2 = '#bf8bcc';     //clock face
         var col3 = '#a60027';     //hand
-        var col4 = '#191c26';  
+        var col4 = '#ffd97b';     //warning
         var col5 = '#e55029';
         var secs = 0;
         var mark = 0;
@@ -58,7 +58,10 @@
         function drawFace(ctx, radius) {
           ctx.beginPath();
           ctx.arc(0, 0, radius, 0, 2*Math.PI);
-          ctx.fillStyle = col2;
+          if(Math.abs(secs - mark) <= 3 || Math.abs(secs-mark) >= 87)
+            ctx.fillStyle = col4;
+          else
+            ctx.fillStyle = col2;
           ctx.fill();
           ctx.strokeStyle = col1;
           ctx.lineWidth = radius*0.1;
