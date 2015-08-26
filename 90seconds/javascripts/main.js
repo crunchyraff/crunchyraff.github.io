@@ -23,6 +23,10 @@ function drawClock() {
 
 function drawFace(ctx, radius) {
   ctx.beginPath();
+  ctx.shadowBlur = 2;
+  ctx.shadowOffsetX = 4;
+  ctx.shadowOffsetY = 4;
+  ctx.shadowColor = "rgba(0, 0, 0, 0.2)";
   ctx.arc(0, 0, radius, 0, 2*Math.PI);
   if(timer >= 84)
     ctx.fillStyle = col4;
