@@ -8,6 +8,7 @@ var col4 = '#ffd97b';     //warning
 var col5 = '#e55029';
 var secs = 0;
 var mark = 0;
+var timer = 0;
 ctx.translate(radius, radius);
 radius = radius * 0.90;
 setInterval(drawClock, 1000);
@@ -23,7 +24,7 @@ function drawClock() {
 function drawFace(ctx, radius) {
   ctx.beginPath();
   ctx.arc(0, 0, radius, 0, 2*Math.PI);
-  if(Math.abs(secs-mark) <= 3 || Math.abs(secs-mark) >= 87)
+  if(timer >= 85)
     ctx.fillStyle = col4;
   else
     ctx.fillStyle = col2;
@@ -35,6 +36,7 @@ function drawFace(ctx, radius) {
   ctx.arc(0, 0, radius*0.05, 0, 2*Math.PI);
   ctx.fillStyle = col3;
   ctx.fill();
+
 }
 
 function drawNumbers(ctx, radius) {
@@ -64,6 +66,7 @@ function drawNumbers(ctx, radius) {
 function drawTime(ctx, radius){
     var second = 0;
     // second
+    timer = (timer + 1) % 90;
     secs = (secs + 1) % 90;
     // second=(second*Math.PI/45);
     second=(secs*Math.PI/45);
@@ -99,4 +102,5 @@ function drawMark(ctx, pos) {
 
 function checkKeyPressed(e) {
     mark = secs;
+    timer = 0;
 }
