@@ -24,7 +24,7 @@ function drawClock() {
 function drawFace(ctx, radius) {
   ctx.beginPath();
   ctx.arc(0, 0, radius, 0, 2*Math.PI);
-  if(timer >= 85)
+  if(timer >= 84)
     ctx.fillStyle = col4;
   else
     ctx.fillStyle = col2;
