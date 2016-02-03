@@ -1,6 +1,7 @@
 body {
 	background-color: #DEE3EA;
 }
+
 tr {
 	-webkit-transition: background-color 0.2s linear 0s;
 	-webkit-transition: color 0.2s linear 0s;	
@@ -10,7 +11,7 @@ tr {
 
 	}
 
-tr:hover{
+tr:hover, thead, .panel-heading{
 background-color: #337ab7;
 color: #fff;
 },

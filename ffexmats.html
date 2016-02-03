@@ -34,7 +34,6 @@
             }
             //hide all the rows
             jo.hide();
-        
             //Recusively filter the jquery object to get results.
             jo.filter(function (i, v) {
                 var $t = $(this);
@@ -62,18 +61,20 @@
 				   $('.tableContent').html(data);
 				});
 		
+		
 		});
+		
       </script>
 	
     <title>Crunchyraff.github.io</title>
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target=".navbar" data-offset="50">
 
-		<div class="container-fluid"  style="min-width:480px;width:768px;">
+		<div id="content" class="container-fluid col-sm-6" style="margin: 0 auto; float: none;">
   
     <!-- HEADER -->
-    <div id="header_wrap" class="outer">
+    <div id="header_wrap" class="outer hidden-xs">
         <header class="inner">
           <div class="page-header"><h1 id="project_title">FFEX Materials
 			<small>by crunchyraff</small></h1></div>
@@ -84,17 +85,20 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-
 	
-	  
-       <br/>
+		<div class="grid">
+		<div class="row">
+			<div  class="container-fluid panel panel-default panel-heading col-xs-12" data-spy="affix" data-offset-top="150" style="max-width: 768px;">
+			<div class="container-fluid col-xs-12">
+				<input id="searchInput" placeholder="Type To Filter" class="form-control">
+			</div>
+			</div>
+		</div>
+		<div class="row">
 		
 	<div class="panel panel-primary table-responsive">
 	  <!-- Default panel contents -->
-		<div class="panel-heading">
-		<input id="searchInput" placeholder="Type To Filter" class="form-control">
-		</div>
-		<table class="table table-striped table-bordered">
+		<table class="table table-bordered table-fixed">
 			<thead>
 				<tr>
 					<th>Item Name</th>
@@ -105,10 +109,231 @@
 				</tr>
 			</thead>
 			<tbody id="fbody" class="tableContent">
+			
+			
+			
+			<tr><td>	Amostran Coconut	</td><td>	Nut Gather	</td><td>		</td><td>		</td><td>	1	</td></tr>
+<tr><td>	Animal Bone	</td><td>	Bone Gather	</td><td>		</td><td>		</td><td>	1	</td></tr>
+<tr><td>	Astral Source	</td><td>	Cactuar	</td><td>	Tonberry	</td><td>		</td><td>	1	</td></tr>
+<tr><td>	Bird Bone	</td><td>	Bone Gather	</td><td>		</td><td>		</td><td>	1	</td></tr>
+<tr><td>	Blazing Magethyst	</td><td>	Mom Bomb	</td><td>	Ifrit	</td><td>		</td><td>	1	</td></tr>
+<tr><td>	Blue Liquid	</td><td>	Toad	</td><td>	Floating Eye	</td><td>		</td><td>	1	</td></tr>
+<tr><td>	Carrion Ash	</td><td>	Ghost	</td><td>	Ahriman	</td><td>		</td><td>	1	</td></tr>
+<tr><td>	Chacker Nut	</td><td>	Nut Gather	</td><td>		</td><td>		</td><td>	1	</td></tr>
+<tr><td>	Cloudless Prism	</td><td>	Prism Gather	</td><td>		</td><td>		</td><td>	1	</td></tr>
+<tr><td>	Coarse Silica	</td><td>	Sand Gather	</td><td>		</td><td>		</td><td>	1	</td></tr>
+<tr><td>	Copper Silksand	</td><td>	Sand Gather	</td><td>		</td><td>		</td><td>	1	</td></tr>
+<tr><td>	Crimson Talon	</td><td>	Mom Bomb	</td><td>	Ifrit Parts	</td><td>		</td><td>	1	</td></tr>
+<tr><td>	Dayring Stone	</td><td>	Amaterasu Parts	</td><td>		</td><td>		</td><td>	1	</td></tr>
+<tr><td>	Deepwater Quill	</td><td>	Adamantoise	</td><td>	Leviathan Parts	</td><td>		</td><td>	1	</td></tr>
+<tr><td>	Diluvial Magethyst	</td><td>	Shiva	</td><td>		</td><td>		</td><td>	1	</td></tr>
+<tr><td>	Earth Magethyst	</td><td>	Death Knight	</td><td>	Dryad	</td><td>		</td><td>	1	</td></tr>
+<tr><td>	Ethereal Dragonclaw	</td><td>	Dragon Zombie	</td><td>	Bahamut	</td><td>		</td><td>	1	</td></tr>
+<tr><td>	Fire Magethyst	</td><td>	Vulture	</td><td>	Ifrit	</td><td>		</td><td>	1	</td></tr>
+<tr><td>	Fire Tertial	</td><td>	Cockatrice	</td><td>	Phoenix Parts	</td><td>		</td><td>	1	</td></tr>
+<tr><td>	Frigid Kiss	</td><td>	Medusa	</td><td>	Shiva Parts	</td><td>		</td><td>	1	</td></tr>
+<tr><td>	Fulmicite	</td><td>	Flan Princess	</td><td>	Ramuh Parts	</td><td>		</td><td>	1	</td></tr>
+<tr><td>	Gleaming Ash	</td><td>	Ghost	</td><td>	Belial	</td><td>		</td><td>	1	</td></tr>
+<tr><td>	Goblin Lord's Jewel	</td><td>	Cactuar	</td><td>	Goblin Lord	</td><td>		</td><td>	1	</td></tr>
+<tr><td>	Hardened Bone	</td><td>	Skeleton	</td><td>	Basilisk	</td><td>	Log Gather	</td><td>	1	</td></tr>
+<tr><td>	Hardwood	</td><td>	Land Turtle	</td><td>		</td><td>	Log Gather	</td><td>	1	</td></tr>
+<tr><td>	Howling Magethyst	</td><td>	Yellow Dragon	</td><td>	Ramuh	</td><td>		</td><td>	1	</td></tr>
+<tr><td>	Iron Ore	</td><td>	Ore Gather	</td><td>		</td><td>		</td><td>	1	</td></tr>
+<tr><td>	Karmic Lantern	</td><td>	Tonbery	</td><td>		</td><td>		</td><td>	1	</td></tr>
+<tr><td>	Large Bone	</td><td>	Basilisk	</td><td>	Lich	</td><td>		</td><td>	1	</td></tr>
+<tr><td>	Large Feather	</td><td>	Vulture	</td><td>	Chocobo	</td><td>		</td><td>	1	</td></tr>
+<tr><td>	Laribad Hemp	</td><td>	Plant Gather	</td><td>		</td><td>		</td><td>	1	</td></tr>
+<tr><td>	Livra Cotton	</td><td>	Plant Gather	</td><td>		</td><td>		</td><td>	1	</td></tr>
+<tr><td>	Lone Wolf's Soul	</td><td>	Behemoth King	</td><td>	Fenrir Parts	</td><td>		</td><td>	1	</td></tr>
+<tr><td>	Magic Droplet	</td><td>	Geyser Gather	</td><td>		</td><td>		</td><td>	1	</td></tr>
+<tr><td>	Magic Source	</td><td>	Tonberry	</td><td>	Magic Pot	</td><td>		</td><td>	1	</td></tr>
+<tr><td>	Mythril Ore	</td><td>	Ore Gather	</td><td>		</td><td>		</td><td>	1	</td></tr>
+<tr><td>	Nightmare Fragment	</td><td>	Devil	</td><td>	Diabolos Parts	</td><td>		</td><td>	1	</td></tr>
+<tr><td>	Petrified Log	</td><td>	Log Gather	</td><td>		</td><td>		</td><td>	1	</td></tr>
+<tr><td>	Photic Scute	</td><td>	Amaterasu Parts	</td><td>		</td><td>		</td><td>	1	</td></tr>
+<tr><td>	Prime Tanned Hide	</td><td>	Goblin	</td><td>	Lamia	</td><td>		</td><td>	1	</td></tr>
+<tr><td>	Prism Carapace	</td><td>	Land Turtle	</td><td>	Forfex	</td><td>		</td><td>	1	</td></tr>
+<tr><td>	Rope Scrap	</td><td>	Pile Gather	</td><td>		</td><td>		</td><td>	1	</td></tr>
+<tr><td>	Rusted Iron Scrap	</td><td>	Goblin	</td><td>	Centaurion	</td><td>		</td><td>	1	</td></tr>
+<tr><td>	Sacred Device	</td><td>	Iron Giant	</td><td>	Alexander	</td><td>		</td><td>	1	</td></tr>
+<tr><td>	Seduction Powder	</td><td>	Great Malboro	</td><td>	Dryad Parts	</td><td>		</td><td>	1	</td></tr>
+<tr><td>	Seismic Magethyst	</td><td>	Great Malboro	</td><td>	Dryad	</td><td>		</td><td>	1	</td></tr>
+<tr><td>	Selenic Prism	</td><td>	Fenrir 4*	</td><td>		</td><td>		</td><td>	1	</td></tr>
+<tr><td>	Sharp Fang	</td><td>	Lizard	</td><td>	Coeurl	</td><td>		</td><td>	1	</td></tr>
+<tr><td>	Silver Liquid	</td><td>	Toad	</td><td>	Flan	</td><td>		</td><td>	1	</td></tr>
+<tr><td>	Skeleton Skull	</td><td>	Skeleton	</td><td>		</td><td>		</td><td>	1	</td></tr>
+<tr><td>	Small Compass	</td><td>	Pile Gather	</td><td>		</td><td>		</td><td>	1	</td></tr>
+<tr><td>	Small Feather	</td><td>	Chocobo	</td><td>	Helldiver	</td><td>		</td><td>	1	</td></tr>
+<tr><td>	Spellcast Iron	</td><td>	Bomb	</td><td>	Wolframitan	</td><td>		</td><td>	1	</td></tr>
+<tr><td>	Stinky Vine	</td><td>	Mandragora	</td><td>	Malboro	</td><td>		</td><td>	1	</td></tr>
+<tr><td>	Sturdy Vine	</td><td>	Mandragora	</td><td>	Malborok	</td><td>		</td><td>	1	</td></tr>
+<tr><td>	Subdued Prism	</td><td>	Prism Gather	</td><td>		</td><td>		</td><td>	1	</td></tr>
+<tr><td>	Sunlight Dew	</td><td>	Geyser Gather	</td><td>		</td><td>		</td><td>	1	</td></tr>
+<tr><td>	Tanned Hide	</td><td>	Leech Bat	</td><td>	Lamia	</td><td>		</td><td>	1	</td></tr>
+<tr><td>	Vampyr Sanguinite	</td><td>	Vampyr	</td><td>		</td><td>		</td><td>	1	</td></tr>
+<tr><td>	Vicious Fang	</td><td>	Lizard	</td><td>	Sabertooth	</td><td>		</td><td>	1	</td></tr>
+<tr><td>	Water Magethyst	</td><td>	Medusa	</td><td>	Shiva	</td><td>		</td><td>	1	</td></tr>
+<tr><td>	Wind Magethyst	</td><td>	Belial	</td><td>	Ramuh	</td><td>		</td><td>	1	</td></tr>
+<tr><td>	Alraune Root	</td><td>	Alraune	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Aquilaria Log	</td><td>	Log Gathering	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Argent Fabric	</td><td>	Shiva Parts	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Attacker Claw	</td><td>	Attacker	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Auric Sand	</td><td>	Sand Gathering	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Azure Geode	</td><td>	Therion	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Basilisk Slough	</td><td>	Basilisk	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Bastion Stone	</td><td>	Alexander Parts	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Bat Wing	</td><td>	Bat	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Beast Bone	</td><td>	Bone Gathering	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Belial Tail	</td><td>	Belial	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Bewitching Pollen	</td><td>	Dryad	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Black Knight Plate	</td><td>	Black Knight	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Bomb Fragment	</td><td>	Bomb	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Cactuar Needle	</td><td>	Cactuar	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Carlyne Flax	</td><td>	Plant Gathering	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Centaurion Plate	</td><td>	Centaurion	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Cerulean Prism	</td><td>	Bahamut Parts	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Chocobo Feather	</td><td>	Chocobo	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Coeurl Claw	</td><td>	Coeurl	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Cracking Vestment	</td><td>	Ramuh	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Crimson Geode	</td><td>	Therion	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Damascus Ore	</td><td>	Ore Gathering	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Daybreak Robe	</td><td>	Amaterasu	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Dayring Stone	</td><td>	Therion Drone	</td><td>	Amaterasu Parts	</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Death Knight Skull	</td><td>	Death Knight	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Demon Wing	</td><td>	Demon	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Earthdrake Fang	</td><td>	Yellow Dragon	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Emery Powder	</td><td>	Sand Gathering	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Faerie Droplet	</td><td>	Geyser Gathering	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Fiendish Eyeball	</td><td>	Ahriman	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Firedrake Scale	</td><td>	Red Dragon	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Flan Gel	</td><td>	Flan	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Floating Eyeball	</td><td>	Floating Eye	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Forfex Shell	</td><td>	Forfex	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Fur Weave	</td><td>	Pile Gathering	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Gelid Diamond	</td><td>	Shiva	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Geotic Memory	</td><td>	Therion	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Ghost Tatter	</td><td>	Ghost	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Gigantuar Needle	</td><td>	Gigantuar	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Gil Snapper Shell	</td><td>	Gil Snapper	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Goblin Guard's Belt	</td><td>	Goblin Guard	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Goblin Horn	</td><td>	Goblin	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Gold Choco Feather	</td><td>	A Chocobo's Treasure Quest	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Gold Ore	</td><td>	Ore Gathering	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Grand Beastbone	</td><td>	Bone Gathering	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Grandtoad Hasma	</td><td>	Zombie Toad	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Helldiver Pinion	</td><td>	Helldiver	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Hellish Bauble	</td><td>	Ifrit	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Holy Water Bead	</td><td>	Geyser Gathering	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Icedrake Talon	</td><td>	Blue Dragon	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Immolated Hide	</td><td>	Ifrit Parts	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Inviolable Circuit	</td><td>	Alexander	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Ireful Sigil	</td><td>	Odin	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Jenova Cells	</td><td>	One-Winged Angel Quest	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Karmic Lantern	</td><td>	Tonberry	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Lamia Oculus	</td><td>	Lamia	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Land Turtle Shell	</td><td>	Land Turtle	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Light Crystal	</td><td>	A Legendary Knight Quest	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Lillium Pawpaw	</td><td>	Nut Gathering	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Lizard Leather	</td><td>	Lizard	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Magic Pot Shard	</td><td>	Magic Pot	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Malboro Tentacle	</td><td>	Malboro	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Mandragora Leaf	</td><td>	Mandragora	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Medusa Glare	</td><td>	Medusa	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Mockmoon Berry	</td><td>	Nut Gathering	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Moonlight Droplet	</td><td>	Fenrir Parts	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Nightsweep Bead	</td><td>	Diabolos Parts	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Omega Armour	</td><td>	Omega Parts	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Photic Scute	</td><td>	Amaterasu Parts	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Pink Tail	</td><td>	Flan Princess	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Radiant Prism	</td><td>	Prism Gathering	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Revenant Fire	</td><td>	Phoenix	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Sabertooth Pelt	</td><td>	Sabertooth	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Sacred Branch	</td><td>	Log Gathering	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Selenic Prism	</td><td>	Fenrir	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Shattered Levin	</td><td>	Ramuh Parts	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Skeleton Skull	</td><td>	Skeleton	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Specter Leather	</td><td>	Specter	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Squishy Cotton	</td><td>	Plant Gathering	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Stiltzkin's Diary	</td><td>	A Moogle's Treasure Quest	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Tenebrous Horn	</td><td>	Diabolos	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Thalassic Scale	</td><td>	Leviathan Parts	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Thick Canvas	</td><td>	Pile Gathering	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Tidal Undulation	</td><td>	Leviathan Parts	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Toad Oil	</td><td>	Toad	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Umbral Geode	</td><td>	Therion	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Vampyr Sanguinite	</td><td>	Vampyr	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Vulture Sight	</td><td>	Vulture	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Warlord Plate	</td><td>	Odin Parts	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Wolframitan Gilhorn	</td><td>	Wolframitan	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Yggra Prism	</td><td>	Prism Gathering	</td><td>		</td><td>		</td><td>	2	</td></tr>
+<tr><td>	Adamantite	</td><td>	Adamantoise	</td><td>		</td><td>		</td><td>	3	</td></tr>
+<tr><td>	Artillery Schema	</td><td>	Alexander Parts	</td><td>		</td><td>		</td><td>	3	</td></tr>
+<tr><td>	Avatar Backbone	</td><td>	Bone Gathering	</td><td>		</td><td>		</td><td>	3	</td></tr>
+<tr><td>	Ninjato Schema	</td><td>	Behemoth	</td><td>		</td><td>		</td><td>	3	</td></tr>
+<tr><td>	Bow Schema	</td><td>	Fenrir Parts	</td><td>		</td><td>		</td><td>	3	</td></tr>
+<tr><td>	Conflagrant Pennon	</td><td>	Aberrant Phoenix Parts	</td><td>		</td><td>		</td><td>	3	</td></tr>
+<tr><td>	Dagger Schema	</td><td>	Aberrant Dryad	</td><td>		</td><td>		</td><td>	3	</td></tr>
+<tr><td>	Demention Sands	</td><td>	Sand Gathering	</td><td>		</td><td>		</td><td>	3	</td></tr>
+<tr><td>	Devil Horn	</td><td>	Devil	</td><td>		</td><td>		</td><td>	3	</td></tr>
+<tr><td>	Divine Log	</td><td>	Log Gathering	</td><td>		</td><td>		</td><td>	3	</td></tr>
+<tr><td>	Eternal Prism	</td><td>	Prism Gathering	</td><td>		</td><td>		</td><td>	3	</td></tr>
+<tr><td>	Explorer's Diary	</td><td>	Pile Gathering	</td><td>		</td><td>		</td><td>	3	</td></tr>
+<tr><td>	Fulminant Raiment	</td><td>	Aberrant Ramuh	</td><td>		</td><td>		</td><td>	3	</td></tr>
+<tr><td>	Goblin Lord's Jewel	</td><td>	Goblin Lord	</td><td>		</td><td>		</td><td>	3	</td></tr>
+<tr><td>	Icetouched Goldband	</td><td>	Aberrant Shiva	</td><td>		</td><td>		</td><td>	3	</td></tr>
+<tr><td>	Icetouched Zurediam	</td><td>	Aberrant Shiva	</td><td>		</td><td>		</td><td>	3	</td></tr>
+<tr><td>	Infernal Gouge	</td><td>	Aberrant Ifrit Parts	</td><td>		</td><td>		</td><td>	3	</td></tr>
+<tr><td>	Inimical Crest	</td><td>	Aberrant Odin	</td><td>		</td><td>		</td><td>	3	</td></tr>
+<tr><td>	Inviolable Panel	</td><td>	Alexander Parts	</td><td>		</td><td>		</td><td>	3	</td></tr>
+<tr><td>	Inviolable Sprocket	</td><td>	Alexander Parts	</td><td>		</td><td>		</td><td>	3	</td></tr>
+<tr><td>	Lich's Skull	</td><td>	Lich	</td><td>		</td><td>		</td><td>	3	</td></tr>
+<tr><td>	Lunatic Silvercryst	</td><td>	Aberrant Fenrir	</td><td>		</td><td>		</td><td>	3	</td></tr>
+<tr><td>	Malboro Eyeball	</td><td>	Malboro	</td><td>		</td><td>		</td><td>	3	</td></tr>
+<tr><td>	Mordrake Bone	</td><td>	Zombie Dragon	</td><td>		</td><td>		</td><td>	3	</td></tr>
+<tr><td>	Ninjato Schema	</td><td>	Leviathan Parts	</td><td>	Aberrant Shiva	</td><td>		</td><td>	3	</td></tr>
+<tr><td>	Omega Circuit α	</td><td>	Omega Parts	</td><td>		</td><td>		</td><td>	3	</td></tr>
+<tr><td>	Omnipotent Lamina	</td><td>	Aberrant Bahamut Parts	</td><td>		</td><td>		</td><td>	3	</td></tr>
+<tr><td>	Omnipotent Razor	</td><td>	Aberrant Bahamut Parts	</td><td>		</td><td>		</td><td>	3	</td></tr>
+<tr><td>	Orihalcum Ore	</td><td>	Ore Gathering	</td><td>		</td><td>		</td><td>	3	</td></tr>
+<tr><td>	Pavis Schema	</td><td>	Alexander Parts	</td><td>		</td><td>		</td><td>	3	</td></tr>
+<tr><td>	Pelagic Driver	</td><td>	Aberrant Leviathan Parts	</td><td>		</td><td>		</td><td>	3	</td></tr>
+<tr><td>	Pelagic Grandfin	</td><td>	Aberrant Leviathan Parts	</td><td>		</td><td>		</td><td>	3	</td></tr>
+<tr><td>	Rod Schema	</td><td>	Shiva Parts	</td><td>	Aberrant Amaterasu	</td><td>		</td><td>	3	</td></tr>
+<tr><td>	Royal Crown	</td><td>	Tonberry King	</td><td>		</td><td>		</td><td>	3	</td></tr>
+<tr><td>	Sacrosanct Network	</td><td>	Aberrant Alexander	</td><td>		</td><td>		</td><td>	3	</td></tr>
+<tr><td>	Sacrosanct Widget	</td><td>	Aberrant Alexander Parts	</td><td>		</td><td>		</td><td>	3	</td></tr>
+<tr><td>	Scythe Schema	</td><td>	Aberrant Bahamut	</td><td>		</td><td>		</td><td>	3	</td></tr>
+<tr><td>	Selenic Pelt	</td><td>	Fenrir Parts	</td><td>		</td><td>		</td><td>	3	</td></tr>
+<tr><td>	Spirit Droplet	</td><td>	Geyser Gathering	</td><td>		</td><td>		</td><td>	3	</td></tr>
+<tr><td>	Staff Schema	</td><td>	Diabolos Parts	</td><td>		</td><td>		</td><td>	3	</td></tr>
+<tr><td>	Sunbeam Raiment	</td><td>	Aberrant Amaterasu	</td><td>		</td><td>		</td><td>	3	</td></tr>
+<tr><td>	Sword Schema	</td><td>	Aberrant Odin	</td><td>	Aberrant Bahamut	</td><td>		</td><td>	3	</td></tr>
+<tr><td>	Thalassic Fin	</td><td>	Leviathan Parts	</td><td>		</td><td>		</td><td>	3	</td></tr>
+<tr><td>	Tome Schema	</td><td>	Ramuh Parts	</td><td>		</td><td>		</td><td>	3	</td></tr>
+<tr><td>	Verdant Geocrux	</td><td>	Therion	</td><td>		</td><td>		</td><td>	3	</td></tr>
+<tr><td>	Hellish Horn	</td><td>	Ifrit Parts	</td><td>		</td><td>		</td><td>	3	</td></tr>
+<tr><td>	Tenebrous Wing	</td><td>	Diabolos Parts	</td><td>		</td><td>		</td><td>	3	</td></tr>
+<tr><td>	Tenebrous Tailspine	</td><td>	Diabolos Parts	</td><td>		</td><td>		</td><td>	3	</td></tr>
+<tr><td>	Crackling Sash	</td><td>	Ramuh Parts	</td><td>		</td><td>		</td><td>	3	</td></tr>
+<tr><td>	Crackling Prism	</td><td>	Ramuh Parts	</td><td>		</td><td>		</td><td>	3	</td></tr>
+<tr><td>	Gelid Silverband	</td><td>	Shiva Parts	</td><td>		</td><td>		</td><td>	3	</td></tr>
+<tr><td>	Thalassic Horn	</td><td>	Leviathan Parts	</td><td>		</td><td>		</td><td>	3	</td></tr>
+<tr><td>	Bewitching Infusion	</td><td>	Dryad Parts	</td><td>		</td><td>		</td><td>	3	</td></tr>
+<tr><td>	Ireful Helmhorn	</td><td>	Odin Parts	</td><td>		</td><td>		</td><td>	3	</td></tr>
+<tr><td>	Ireful Cloak	</td><td>	Odin Parts	</td><td>		</td><td>		</td><td>	3	</td></tr>
+<tr><td>	Ireful Harness	</td><td>	Odin Parts	</td><td>		</td><td>		</td><td>	3	</td></tr>
+<tr><td>	Crystalline Blade	</td><td>	Bahamut Parts	</td><td>		</td><td>		</td><td>	3	</td></tr>
+<tr><td>	Daybreak Mask	</td><td>	Amaterasu Parts	</td><td>		</td><td>		</td><td>	3	</td></tr>
+<tr><td>	Daybreak Shard	</td><td>	Amaterasu Parts	</td><td>		</td><td>		</td><td>	3	</td></tr>
+<tr><td>	Conflagrant Vane	</td><td>	Aberrant Phoenix Parts	</td><td>		</td><td>		</td><td>	3	</td></tr>
+
+			
+			
 			</tbody>
 		</table>
 	</div>
 
+	</div>
       </section>
     </div>
 
