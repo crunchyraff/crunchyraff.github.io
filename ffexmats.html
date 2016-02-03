@@ -4,74 +4,30 @@
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Crunchyraff.github.io : Main">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-    <script src="javascripts/jquery-1.11.1.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-    <title>Crunchyraff.github.io</title>
-  </head>
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 
-  <body>
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>    <script src="javascripts/jquery-1.11.1.min.js"></script>
+	
+	
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/crunchyraff">View on GitHub</a>
-
-          <h1 id="project_title">FFEX Materials</h1>
-          <h2 id="project_tagline">by crunchyraff</h2>
-
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer" style="background:#191c26">
-      <section id="main_content" class="inner">
-
-      <input id="searchInput" placeholder="Type To Filter">
-        <br/>
-        <table>
-            <thead>
-                <tr>
-                    <th>Column1</th>
-                    <th>Column2</th>
-                </tr>
-            </thead>
-            <tbody id="fbody">
-                <tr>
-                    <td>cat</td>
-                    <td>one</td>
-                </tr>
-                <tr>
-                    <td>dog</td>
-                    <td>two</td>
-                </tr>
-                <tr>
-                    <td>cat</td>
-                    <td>three</td>
-                </tr>
-                <tr>
-                    <td>moose</td>
-                    <td>four</td>
-                </tr>
-                <tr>
-                    <td>mouse</td>
-                    <td>five</td>
-                </tr>
-                <tr>
-                    <td>dog</td>
-                    <td>six</td>
-                </tr>
-            </tbody>
-        </table>
-        <script>
+	<script>
+		$( document ).ready( function(){
           $("#searchInput").keyup(function () {
             //split the current value of searchInput
             var data = this.value.toUpperCase().split(" ");
             //create a jquery object of the rows
             var jo = $("#fbody").find("tr");
+						
             if (this.value == "") {
                 jo.show();
                 return;
@@ -100,8 +56,60 @@
         }).css({
             "color": "#C0C0C0"
         });
+		
+		
+			  $.get('matlist.html', function(data) {
+				   //process text file line by line
+				   $('.tableContent').html(data);
+				   alert(data);
+				});
+		
+		});
       </script>
+	
+    <title>Crunchyraff.github.io</title>
+  </head>
 
+  <body>
+
+		<div class="container"  style="min-width:500px;width:768px;">
+  
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/crunchyraff">View on GitHub</a>
+
+          <h1 id="project_title">FFEX Materials</h1>
+          <h2 id="project_tagline">by crunchyraff</h2>
+
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+
+	
+	  
+       <br/>
+		
+	<div class="panel panel-default">
+	  <!-- Default panel contents -->
+		<div class="panel-heading">
+		<input id="searchInput" placeholder="Type To Filter">
+		</div>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Item Name</th>
+					<th>Source</th>
+				</tr>
+			</thead>
+			<tbody id="fbody" class="tableContent">
+				
+			</tbody>
+		</table>
+	</div>
 
       </section>
     </div>
@@ -114,6 +122,6 @@
     </div>
 
     
-
+	</div>
   </body>
 </html>
