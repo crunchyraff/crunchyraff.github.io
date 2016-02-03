@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Crunchyraff.github.io : Main">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <script src="javascripts/jquery-1.11.1.min.js"></script>
+
+    <title>Crunchyraff.github.io</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/crunchyraff">View on GitHub</a>
+
+          <h1 id="project_title">FFEX Materials</h1>
+          <h2 id="project_tagline">by crunchyraff</h2>
+
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer" style="background:#191c26">
+      <section id="main_content" class="inner">
+
+      <input id="searchInput" placeholder="Type To Filter">
+        <br/>
+        <table>
+            <thead>
+                <tr>
+                    <th>Column1</th>
+                    <th>Column2</th>
+                </tr>
+            </thead>
+            <tbody id="fbody">
+                <tr>
+                    <td>cat</td>
+                    <td>one</td>
+                </tr>
+                <tr>
+                    <td>dog</td>
+                    <td>two</td>
+                </tr>
+                <tr>
+                    <td>cat</td>
+                    <td>three</td>
+                </tr>
+                <tr>
+                    <td>moose</td>
+                    <td>four</td>
+                </tr>
+                <tr>
+                    <td>mouse</td>
+                    <td>five</td>
+                </tr>
+                <tr>
+                    <td>dog</td>
+                    <td>six</td>
+                </tr>
+            </tbody>
+        </table>
+        <script>
+          $("#searchInput").keyup(function () {
+            //split the current value of searchInput
+            var data = this.value.toUpperCase().split(" ");
+            //create a jquery object of the rows
+            var jo = $("#fbody").find("tr");
+            if (this.value == "") {
+                jo.show();
+                return;
+            }
+            //hide all the rows
+            jo.hide();
+        
+            //Recusively filter the jquery object to get results.
+            jo.filter(function (i, v) {
+                var $t = $(this);
+                for (var d = 0; d < data.length; ++d) {
+                    if ($t.text().toUpperCase().indexOf(data[d]) > -1) {
+                        return true;
+                    }
+                }
+                return false;
+            })
+            //show the rows that match.
+            .show();
+        }).focus(function () {
+            this.value = "";
+            $(this).css({
+                "color": "black"
+            });
+            $(this).unbind('focus');
+        }).css({
+            "color": "#C0C0C0"
+        });
+      </script>
+
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
