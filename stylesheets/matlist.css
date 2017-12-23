@@ -14,4 +14,10 @@ tr {
 tr:hover, thead, .panel-heading{
 background-color: #337ab7;
 color: #fff;
-},
+}
+
+#searchBar {
+	-webkit-transition: position 0.2s linear 0s;
+
+	transition: position 0.2s linear 0s;
+}
