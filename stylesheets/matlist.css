@@ -9,9 +9,15 @@ tr {
 	transition: background-color 0.2s linear 0s;
 	transition: color 0.2s linear 0s;
 
-	}
+}
 
 tr:hover, thead, .panel-heading{
 background-color: #337ab7;
 color: #fff;
-},
+}
+
+#inputBar {
+	-webkit-transition: position 0.2s linear 0s;
+
+	transition: position 0.2s linear 0s;
+}
