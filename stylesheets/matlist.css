@@ -9,15 +9,23 @@ tr {
 	transition: background-color 0.2s linear 0s;
 	transition: color 0.2s linear 0s;
 
-	}
+}
 
 tr:hover, thead, .panel-heading{
 background-color: #337ab7;
 color: #fff;
 }
 
+<<<<<<< HEAD
 #searchBar {
 	-webkit-transition: position 0.2s linear 0s;
 
 	transition: position 0.2s linear 0s;
 }
+=======
+#inputBar {
+	-webkit-transition: position 0.2s linear 0s;
+
+	transition: position 0.2s linear 0s;
+}
+>>>>>>> origin/master
