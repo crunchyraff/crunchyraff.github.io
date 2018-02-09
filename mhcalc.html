@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/stylesheets/mhstyle.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <title>MH Damage Calc</title>
+</head>
+<body>
+    
+    <div class="wrapper">
+
+        <div class="boxes" onkeyup="calculate()">
+            <div class="box box-a">
+                <!-- <i class="fas fa-globe fa-4x"></i> -->
+                <i class="material-icons md-48">fitness_center</i>
+                <h2>True raw:</h2>
+                <input type="number" name="raw" id="raw" min="-9999" max="9999" oninput="rawVal()" autofocus>
+            </div>
+            <div class="box box-b">
+                    <i class="material-icons md-48">poll</i>
+                <h2>Affinity:</h2>
+                <input type="number" name="aff" id="aff" min="-100" max="100"  oninput="affVal()">
+            </div>
+            
+            <div class="box box-c">
+                    <i class="material-icons md-48">videogame_asset</i>
+                <h2>Damage:</h2>
+                <h1 id='dmg'>0</h1>
+
+                
+            </div>
+            <script>
+                    function rawVal() {
+                        if($("#raw").val() > 9999) {
+                            $("#raw").val(9999);
+                        }
+                        else if($("#raw").val() < -999){
+                            $("#raw").val(-999);
+                        }
+                    };
+
+                    function affVal() {
+                        if($("#aff").val() > 100) {
+                            $("#aff").val(100);
+                        }
+                        else if($("#aff").val() < -100) {
+                            $("#aff").val(-100);
+                        }
+                    };
+                    function calculate() {
+                        nx = parseFloat(parseFloat($("#raw").val()) + 
+                            parseFloat($("#raw").val() * 0.25 * ($("#aff").val() / 100))
+                            ).toFixed(2);
+                        $("#dmg").html(nx = +nx || 0);
+                    };
+
+            </script>
+        </div>
+
+    </div>
+    
+</body>
+</html>
