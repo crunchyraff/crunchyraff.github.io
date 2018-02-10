@@ -83,6 +83,7 @@ img {
     grid-area: c;
 }
 
+<<<<<<< HEAD
 .box-option {
     display: inline-block;
     vertical-align: middle;
@@ -92,6 +93,11 @@ h2,h1,h3,h4,h5 {
     margin-top: 0;
     margin-bottom: 0;
     vertical-align: middle;
+=======
+h2,h1 {
+    margin-top: 0;
+    margin-bottom: 0;
+>>>>>>> origin/master
 }
 
 .material-icons.md-48 {
@@ -107,6 +113,7 @@ h2,h1,h3,h4,h5 {
             'c';
     }
 }
+<<<<<<< HEAD
 
 /* The switch - the box around the slider */
 .switch {
@@ -167,3 +174,5 @@ h2,h1,h3,h4,h5 {
   .slider.round:before {
     border-radius: 50%;
   }
+=======
+>>>>>>> origin/master
