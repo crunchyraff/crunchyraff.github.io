@@ -8,7 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
-    <title>MH Damage Calc</title>
+    <title>MH Damage Calculator</title>
 </head>
 <body>
     
@@ -18,13 +18,39 @@
             <div class="box box-a">
                 <!-- <i class="fas fa-globe fa-4x"></i> -->
                 <i class="material-icons md-48">fitness_center</i>
-                <h2>True raw:</h2>
+                <h2>Raw Damage:</h2>
                 <input type="number" name="raw" id="raw" min="-9999" max="9999" oninput="rawVal()" autofocus>
+                <div class="box-option">
+                    <select id="type" onchange="calculate()">
+                        <option value="true" mult="1">True Raw</option>
+                        <option value="hammer" mult="5.2">Hammer</option>
+                        <option value="horn" mult="5.2">Hunting Horn</option>
+                        <option value="switchaxe" mult="5.4">Switch Axe</option>
+                        <option value="greatsword" mult="4.8">Great Sword</option>
+                        <option value="chargeblade" mult="3.6">Charge Blade</option>
+                        <option value="longsword" mult="3.3">Longsword</option>
+                        <option value="insectglaive" mult="3.1">Insect Glaive</option>
+                        <option value="lance" mult="2.3">Lance</option>
+                        <option value="gunlance" mult="2.3">Gunlance</option>
+                        <option value="sns" mult="1.4">Sword and Shield</option>
+                        <option value="dualblades" mult="1.4">Dual Blades</option>
+                        <option value="hbg" mult="1.5">Heavy Bowgun</option>
+                        <option value="lbg" mult="1.3">Light Bowgun</option>
+                        <option value="bow" mult="1.2">Bow</option>
+                    </select>
+                </div>
             </div>
             <div class="box box-b">
                     <i class="material-icons md-48">poll</i>
                 <h2>Affinity:</h2>
                 <input type="number" name="aff" id="aff" min="-100" max="100"  oninput="affVal()">
+                <h4 class="box-option">
+                    Crit Boost
+                    <label class="switch">
+                        <input type="checkbox" name="critboost" id="critboost" onclick="calculate()">
+                        <span class="slider round"></span>
+                    </label>
+                </h4>
             </div>
             
             <div class="box box-c">
@@ -53,9 +79,11 @@
                         }
                     };
                     function calculate() {
-                        nx = parseFloat(parseFloat($("#raw").val()) + 
-                            parseFloat($("#raw").val() * 0.25 * ($("#aff").val() / 100))
-                            ).toFixed(2);
+                        cb = $("#critboost").is(":checked") ? .4 : .25;
+                        ml = $("#type option:selected").attr('mult');
+                        nx = (parseFloat(parseFloat($("#raw").val()) + 
+                            parseFloat($("#raw").val() * cb * ($("#aff").val() / 100))
+                            ) / ml).toFixed(2);
                         $("#dmg").html(nx = +nx || 0);
                     };
 
@@ -65,3 +93,4 @@
     </div>
     
 </body>
+</html>
