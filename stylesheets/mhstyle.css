@@ -4,6 +4,7 @@
     --primary: rgb(245, 223, 177);
     --dark: #333;
     --light: rgb(255, 255, 255);
+    --background: rgb(233, 227, 218);
     --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
     --shadowdark: rgba(84, 84, 84, 0.8);
 }
@@ -15,7 +16,7 @@ html {
 }
 
 body {
-    background: rgb(233, 227, 218);
+    background: var(--background);
     margin: 30px 50px;
     line-height: 1.4;
 }
@@ -197,7 +198,28 @@ h2,h1,h3,h4,h5 {
     .material-icons.md-48 {
         display: none;
     }
+
+    .box {
+        border-radius: 10px;
+        transition-duration: 150ms;
+        margin: 0 auto;
+        width: 200px;
+        align-self: center;
+        justify-self: center;
+        background: transparent;
+        text-align: center;
+        padding: .4rem .4rem;
+        box-shadow: 0 0 0 0;
+    }
+
     .boxes {
+        background-color: var(--primary);
+        border-radius: 10px;
+        grid-gap: 5px;
+        padding: .4rem .4rem;
+        box-shadow: var(--shadow);
+        margin: 0 auto;
+        transition-duration: 150ms;
         grid-template-columns: 1fr;
         grid-template-areas:
             'a'
@@ -205,4 +227,5 @@ h2,h1,h3,h4,h5 {
             'c'
             'd';
     }
+
 }
