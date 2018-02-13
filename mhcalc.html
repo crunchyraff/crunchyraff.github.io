@@ -54,13 +54,28 @@
             </div>
             
             <div class="box box-c">
-                    <i class="material-icons md-48">videogame_asset</i>
-                <h2>Damage:</h2>
-                <h1 id='dmg'>0</h1>
-
+                    <i class="material-icons md-48">content_cut</i>
+                <h2>Sharpness:</h2>
+                <div class="box-option-sharpness">
+                    <select name="sharpness" id="sharpness" onchange="selectColor()">
+                        <option value="0.25" class="sharp-red">Red</option>
+                        <option value="0.5" class="sharp-orange">Orange</option>
+                        <option value="0.75" class="sharp-yellow">Yellow</option>
+                        <option value="1" class="sharp-green" selected>Green</option>
+                        <option value="1.2" class="sharp-blue">Blue</option>
+                        <option value="1.32" class="sharp-white">White</option>
+                    </select>
+                </div>
                 
             </div>
-            <script>
+
+            <div class="box box-d">
+                <i class="material-icons md-48">videogame_asset</i>
+                <h2>Damage:</h2>
+                <h1 id='dmg'>0</h1>
+            </div>
+
+                <script>
                     function rawVal() {
                         if($("#raw").val() > 9999) {
                             $("#raw").val(9999);
@@ -78,14 +93,24 @@
                             $("#aff").val(-100);
                         }
                     };
+
+                    function selectColor() {
+                        var selectedItem = $('#sharpness :selected');
+                        $('#sharpness').css('backgroundColor', selectedItem.css('backgroundColor'));
+                        calculate();
+                    }
+
                     function calculate() {
                         cb = $("#critboost").is(":checked") ? .4 : .25;
                         ml = $("#type option:selected").attr('mult');
-                        nx = (parseFloat(parseFloat($("#raw").val()) + 
+                        sh = $('#sharpness').val();
+                        nx = (parseFloat((parseFloat($("#raw").val()) + 
                             parseFloat($("#raw").val() * cb * ($("#aff").val() / 100))
-                            ) / ml).toFixed(2);
+                            ) * sh) / ml).toFixed(2);
                         $("#dmg").html(nx = +nx || 0);
                     };
+
+                    selectColor();
 
             </script>
         </div>
