@@ -65,7 +65,7 @@ body {
 }
 
 .info-list {
-    list-style: square;
+    list-style: none;
     /* padding-left: 0; */
 }
 
@@ -88,6 +88,7 @@ body {
     text-align: center;
     color: var(--lightTransparent);
     margin: auto;
+    padding-bottom: 20px;
     height: 20vh;
     font-weight: bold;
     font-size: 3.2em;
