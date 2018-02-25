@@ -13,11 +13,12 @@
 
 body {
     width: 100%;
+    min-height: 100%;
     margin: 0;
     padding: 0;
     background: url('../img/coffee_small.jpg') no-repeat fixed center;
     background-size: cover;
-    min-height: 100%;
+    overflow: hidden;
     font-family: Helvetica, sans-serif;
     font-size: 1.4em;
     color: var(--darkText);
@@ -119,16 +120,16 @@ body {
         width: 80vw;
     }
     .info-text {
-        font-size: 1.4em;
+        font-size: 1.0em;
     }
     .main-text {
-        font-size: 2.8em;
+        font-size: 1.8em;
         height: 30vh;
     }
     #date {
-        font-size: 1.4em;
+        font-size: 1.0em;
     }
     #clock {
-        font-size: 2.8em;
+        font-size: 2.0em;
     }
 }
