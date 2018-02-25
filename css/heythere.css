@@ -16,7 +16,7 @@ body {
     min-height: 100%;
     margin: 0;
     padding: 0;
-    background: url('../img/coffee_small.jpg') no-repeat fixed center;
+    background: url('../img/coffee_small.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -117,9 +117,6 @@ body {
 }
 
 @media(max-width:696px) {
-    .body {
-        background-attachment: scroll;
-    }
     .info-card {
         left: 10vw;
         margin-left: auto;
