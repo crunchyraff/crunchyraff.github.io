@@ -114,10 +114,14 @@ body {
 }
 
 @media(max-width:696px) {
+    .body {
+        background-attachment: scroll;
+    }
     .info-card {
         left: 10vw;
         margin-left: auto;
         width: 80vw;
+        opacity: 1;
     }
     .info-text {
         font-size: 1.0em;
