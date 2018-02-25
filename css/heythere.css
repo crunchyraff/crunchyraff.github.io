@@ -15,10 +15,7 @@ body {
     width: 100%;
     margin: 0;
     padding: 0;
-    background: url('../img/coffee_small.jpg');
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: center;
+    background: url('../img/coffee_small.jpg') no-repeat fixed center;
     background-size: cover;
     font-family: Helvetica, sans-serif;
     font-size: 1.4em;
@@ -90,7 +87,7 @@ body {
     margin: auto;
     padding-bottom: 20px;
     height: 20vh;
-    font-weight: bold;
+    /* font-weight: bold; */
     font-size: 3.2em;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     transition: opacity 1.5s ease-out 200ms;
@@ -114,9 +111,23 @@ body {
     font-family: 'Courier New', Courier, monospace;
 }
 
-@media(max-width:690px) {
+@media(max-width:696px) {
     .info-card {
         left: 10vw;
         margin-left: auto;
+        width: 80vw;
+    }
+    .info-text {
+        font-size: 1.4em;
+    }
+    .main-text {
+        font-size: 2.8em;
+        height: 30vh;
+    }
+    #date {
+        font-size: 1.4em;
+    }
+    #clock {
+        font-size: 2.8em;
     }
 }
