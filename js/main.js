@@ -5,6 +5,9 @@ var today = new Date();
 var dd = checkTime(today.getDate());
 var mm = checkTime(today.getMonth()+1); //January is 0!
 var yyyy = today.getFullYear();
+var infocard = document.getElementById('info-main');
+
+var tgl = 0;
 
 function init() {
     document.getElementById('date').innerHTML = mm + '/' + dd + '/' + yyyy;
@@ -19,13 +22,15 @@ function init() {
 }
 
 function toggle() {
-    var obj = document.querySelector('#info-main')
-    if(obj.classList.contains('shown')) {
-        obj.classList.remove('shown');
-    }
-    else {
-        obj.classList.add('shown');
-    }
+    var abouticon = document.getElementById('about-open')
+    abouticon.classList.toggle('fa-question');
+    abouticon.classList.toggle('fa-times');
+    infocard.classList.toggle('shown');
+}
+
+function draghandler(e) {
+    e = e ||window.event;
+    obj.style.top = e.pageY + 'px';
 }
 
 function startTime() {            
@@ -57,7 +62,7 @@ function cycleText()
         mainText.classList.remove('hide-text');            
     }, 1500);
     
-    var t = setTimeout(cycleText, 10000);
+    var t = setTimeout(cycleText, 8000);
 }
 
 function randomNoRepeat(i, x) {

@@ -2,6 +2,8 @@
 :root {
 --primary: #f5f2f0;
 --secondary: rgb(233, 228, 220);
+--tertiary: rgb(155, 128, 103);
+--link: rgb(177, 104, 37);
 --dark: #333;
 --darkTransparent: rgba(33,33,33, 0.4);
 --darkText: rgba(0, 0, 0, 0.87);
@@ -27,35 +29,64 @@ body {
     color: var(--darkText);
 }
 
+a {
+    color: var(--link);
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: var(--lightTransparent);
+}
+
+a:visited {
+    color: var(--tertiary);
+}
+
 .info-card {
     position: fixed;
-    bottom: -56vh;
+    bottom: -60vh;
     left: 10vw;
     height: 60vh;
     width: 20vw;
     min-width: 300px;
     /* padding: 10px; */
-    border-radius: 12px 12px 0 0;
+    border-radius: 0px 12px 0 0;
     box-shadow: var(--shadow);
     background: var(--secondary);
     display: block;
-    transition: bottom 700ms ease-in-out 20ms;
+    transition: bottom 700ms ease-in-out 20ms,
+                opacity 700ms ease-in-out 20ms;
+    opacity: .37;
+    z-index: 1;
+}
+
+.pointer {
     cursor: pointer;
-    opacity: .77;
 }
 
 .info-top {
-    border-radius: inherit;
-    width: 100%;
+    position: relative;
+    bottom: 40px;
+    border-radius: 5px 5px 0 0;
+    width: 15%;
     height: 40px;
     background-color: var(--primary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .info-text {
-    padding: 0 0 0 0;
+    padding: 0 0;
     margin: 20px 20px 40px 20px;
     text-align: left;
     border-bottom: 1px solid var(--darkTransparent);
+}
+
+.info-text a {
+    border-radius: 10px;
+    transition: background-color 200ms ease-out;
 }
 
 .info-1 {
@@ -68,11 +99,21 @@ body {
 
 .info-list {
     list-style: none;
-    /* padding-left: 0; */
+    padding-left: 0;
+}
+
+.info-list li {
+    border-radius: 10px;
+    margin: 5px;
 }
 
 .shown {
     bottom: 0;
+    opacity: 1;
+}
+
+.hidden {
+    display: none;
 }
 
 .main-header {
@@ -88,7 +129,7 @@ body {
     display: flex;
     align-items: flex-end;
     text-align: center;
-    color: var(--lightTransparent);
+    color: var(--light);
     margin: auto;
     padding-bottom: 20px;
     height: 20vh;
@@ -116,7 +157,7 @@ body {
     font-family: 'Courier New', Courier, monospace;
 }
 
-@media(max-width:696px) {
+@media(max-width:916px) {
     html {
         height: 100vh; /* set viewport constraint */
         min-height: 100%; /* enforce height */
