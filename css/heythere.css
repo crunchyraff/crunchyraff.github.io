@@ -127,7 +127,8 @@ a:visited {
 
 .main-text {
     display: flex;
-    align-items: flex-end;
+    flex-direction: column;
+    justify-content: flex-end;
     text-align: center;
     color: var(--light);
     margin: auto;
@@ -174,6 +175,7 @@ a:visited {
     .main-text {
         font-size: 1.8em;
         height: 30vh;
+        width: 80vw;
     }
     #date {
         font-size: 1.0em;
