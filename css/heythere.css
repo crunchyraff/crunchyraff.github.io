@@ -82,9 +82,9 @@ a:visited {
 
 .info-text {
     padding: 0 0;
-    margin: 0px 20px 40px 20px;
+    margin: 0 20px 0 20px;
     text-align: left;
-    border-bottom: 1px solid var(--darkTransparent);
+    border-bottom: 1px dotted var(--darkTransparent);
 }
 
 .info-text a {
