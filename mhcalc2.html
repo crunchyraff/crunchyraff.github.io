@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/mhcalc2.css">
+    <title>Damage Calc V2</title>
+</head>
+
+<body>
+    <script type="text/x-template" id="custom-row-template">
+        <tr class="row">
+            <td><input v-model="label" placeholder="Enter Name"></td>
+            <td><input v-model="power" type="number"></td>
+            <td>
+                <select v-model="type">
+                    <option v-for="wep in weapons" v-bind:value="wep.value">
+                        {{ wep.text }}</option>
+                </select>
+            </td>
+            <td><input v-model="affinity" type="number"></td>
+            <td>
+                <select v-model="sharpness" v-bind:class="selectBG" v-if="!((type === 'bow') || (type === 'lbg') || (type === 'hbg'))">
+                    <option v-for="option in options" v-bind:value="option.value" v-bind:class="option.bgcolor">
+                        {{ option.text }}</option>
+                </select>
+            </td>
+            <td>
+                <p class="range-field">
+                    <input type="range" id="crit-boost" v-model="boost" value="0" min="0" max="3"/>
+                    <span class="badge">{{ boost }}</span>
+                </p>
+            </td>
+            <td><div id="computed-power">{{ computedPower }}</div></td>
+            <td><i class="material-icons mouse-pointer" v-on:click="deleteRow">delete</i></td>
+        </tr>
+    </script>
+
+    <!--application -->
+
+
+
+    <div class="container" id="customRowExample">
+        <table id="main-table" class="striped highlight centered z-depth-2">
+            <tr class="row">
+                <th>Label</th>
+                <th>Attack</th>
+                <th>Type</th>
+                <th>Affinity</th>
+                <th>Sharpness</th>
+                <th>Crit Boost</th>
+                <th>Computed Power</th>
+                <th>Remove</th>
+            </tr>
+            <tr is="custom-row" v-for="item in items" v-bind:item="item"></tr>
+        </table>
+    </div>
+
+    <div class="container">
+        <div id="addButton" class="right-align">
+            <a href="#" class="btn-floating btn-small waves-effect orange">
+                <i class="material-icons mouse-pointer" v-on:click="addRow">add</i>
+            </a>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <script src="js/mhcalc2.js"></script>
+</body>
+
+</html>

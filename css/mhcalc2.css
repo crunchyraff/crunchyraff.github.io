@@ -1,0 +1,37 @@
+/* CSS Variables */
+:root {
+    --primary: #f5f2f0;
+    --secondary: rgb(233, 228, 220);
+    --tertiary: rgb(155, 128, 103);
+    --link: rgb(177, 104, 37);
+    --dark: #333;
+    --darkTransparent: rgba(33,33,33, 0.4);
+    --darkText: rgba(0, 0, 0, 0.87);
+    --light: #ffffff;
+    --lightTransparent: rgba(255,255,255, 0.87);
+    --veryTransparent: rgba(255,255,255, 0.40);
+    --shadow: 0 5px 15px rgba(24, 24, 24, 0.77);
+}
+
+.mouse-pointer {
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    /* user-drag: none; */
+}
+
+select {
+    display: inline;
+}
+
+#computed-power {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+#addButton {
+    margin: 8px 10px 0 0;
+}
