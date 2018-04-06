@@ -9,6 +9,16 @@ var modalData = {
     boost: '',
     computedPower: ''
 }
+var myChart = new Chart({},{});
+
+var elem = document.querySelector('.modal-trigger');
+
+$(document).ready(function () {
+    $('.modal').modal();
+
+});
+
+// console.log(instance);
 
 Vue.component('custom-row', {
     template: '#custom-row-template',
@@ -62,6 +72,9 @@ Vue.component('custom-row', {
                     mul = 1;
                     break;
             }
+        },
+        getComp: function () {
+            return this.item.computedPower;
         }
     },
     props: ['item'],
@@ -92,7 +105,8 @@ Vue.component('custom-row', {
                 { text: 'Light Bowgun', value: 'lbg', mult: 1.3 },
                 { text: 'Heavy Bowgun', value: 'hbg', mult: 1.5 },
                 { text: 'Bow', value: 'bow', mult: 1.2 },
-            ]
+            ],
+            computed: 0,
         }
     },
     computed: {
@@ -117,9 +131,12 @@ Vue.component('custom-row', {
                 return this.item.type;
             },
             set: function (val) {
-                this.item.mult = val;
+                this.item.mult = getMult(val);
                 this.item.type = val;
             }
+        },
+        mult: function () {
+            return getMult(this.item.type);
         },
         affinity: {
             get: function () {
@@ -147,6 +164,29 @@ Vue.component('custom-row', {
                 this.item.boost = val;
             }
         },
+        comp: function() {
+            return this.computedPower;
+        },
+        computedPower: {
+            cache: false,
+            get: function () {
+                var nPow = parseFloat(this.item.power) || 0;
+                var nAff = parseFloat(this.item.affinity) || 0;
+                var nSha = parseFloat(this.item.sharpness);
+                var nBoo = parseFloat(0.25 + (0.05 * parseFloat(this.item.boost)));
+                var nTyp = getMult(this.item.type);
+                nPow /= nTyp;
+                if (nTyp == 'bow' || nTyp == 'lbg' || nTyp == 'hbg') {
+                    nSha = 1;
+                }
+                var cpt = ((nPow + (nPow * (nAff / 100)) * nBoo) * nSha).toFixed(2);
+                this.item.computed = cpt;
+                return isNaN(cpt) ? 0 : cpt;
+            },
+            set: function (val) {
+                this.item.computed = val;
+            }
+        },
         selectBG: function () {
             var bgc = 'green';
             switch (this.item.sharpness) {
@@ -170,22 +210,8 @@ Vue.component('custom-row', {
                     break;
                 default:
             }
-
             return bgc;
         },
-        computedPower: function () {
-            var nPow = parseFloat(this.item.power) || 0;
-            var nAff = parseFloat(this.item.affinity) || 0;
-            var nSha = parseFloat(this.item.sharpness);
-            var nBoo = parseFloat(0.25 + (0.05 * parseFloat(this.item.boost)));
-            var nTyp = getMult(this.item.type);
-            nPow /= nTyp;
-            if(nTyp == 'bow' || nTyp == 'lbg' || nTyp == 'hbg') {
-                nSha = 1;
-            }
-            var cpt = ((nPow + (nPow * (nAff / 100)) * nBoo) * nSha).toFixed(2);
-            return isNaN(cpt) ? 0 : cpt;
-        }
     }
 })
 
@@ -193,19 +219,75 @@ var addRowButton = new Vue({
     el: '#addButton',
     methods: {
         addRow: function () {
-            var newRow = new Object();
             cRowExample.items.push(Object.assign({}, cRowExample.items[cRowExample.items.length - 1]));
+            // cRowExample.items.forEach((i)=>{console.log(i.type)});
         }
     }
 })
 
+var getChartButton = new Vue({
+    el: '#chart-btn',
+    methods: {
+        getChart: function () {
+            var cData = [];
+            var cLabels = [];
+            var cColors = [];
+            var cBorders = [];
+            var i = 0;
+            cRowExample.items.forEach((e) => {
+                i++;
+                cData.push(e.computed);
+                cLabels.push(e.label == '' ? i : e.label);
+                cColors.push('rgba(255, 99, 132, 0.2)',);
+                cBorders.push('rgba(255,99,132,1)');
+            });
+            // cRowExample.items.forEach((i)=>{console.log(i.type)});
+            var ctx = document.getElementById("myChart").getContext('2d');
+            if(myChart){myChart.destroy();};
+            myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: cLabels,
+                    datasets: [{
+                        label: 'Computed Attack Power',
+                        data: cData,
+                        backgroundColor: cColors,
+                        borderColor: cBorders,
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+        }
+    }
+})
 
 var cRowExample = new Vue({
     el: '#customRowExample',
     data: {
         items: [
-            { 'label': '', 'power': 100, 'type': 'raw', 'affinity': 0, 'boost': 0, 'sharpness': 1.05 },
+            {
+                'label': '',
+                'power': 100,
+                'type': 'raw',
+                'affinity': 0,
+                'boost': 0,
+                'sharpness': 1.05
+            },
         ]
+    },
+    methods: {
+        getPower: function () {
+            return items.computedPower;
+        }
     },
 })
 
@@ -254,3 +336,4 @@ function getMult(val) {
     }
     return mul;
 }
+

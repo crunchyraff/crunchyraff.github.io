@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+        crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/mhcalc2.css">
@@ -18,10 +20,13 @@
             <td><input v-model="label" placeholder="Enter Name"></td>
             <td><input v-model="power" type="number"></td>
             <td>
-                <select v-model="type">
+                <select id='weapon-chosen' v-model="type">
                     <option v-for="wep in weapons" v-bind:value="wep.value">
                         {{ wep.text }}</option>
                 </select>
+                <small class="badge">Multiplier: 
+                    {{ mult }}
+                </small>
             </td>
             <td><input v-model="affinity" type="number"></td>
             <td>
@@ -33,10 +38,10 @@
             <td>
                 <p class="range-field">
                     <input type="range" id="crit-boost" v-model="boost" value="0" min="0" max="3"/>
-                    <span class="badge">{{ boost }}</span>
+                    <small class="badge">Level: {{ boost }}</small>
                 </p>
             </td>
-            <td><div id="computed-power">{{ computedPower }}</div></td>
+            <td><input id="computed-power" v-model="computedPower" disabled></input></td>
             <td><i class="material-icons mouse-pointer" v-on:click="deleteRow">delete</i></td>
         </tr>
     </script>
@@ -58,14 +63,37 @@
         </table>
     </div>
 
-    <div class="container">
-        <div id="addButton" class="right-align">
-            <a href="#" class="btn-floating btn-small waves-effect orange">
-                <i class="material-icons mouse-pointer" v-on:click="addRow">add</i>
+    <div class="container btn-row">
+        <!-- <a class="left-align waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a> -->
+        <!-- Modal Trigger -->
+            <button id="chart-btn" data-target="modal1" class="btn modal-trigger waves-effect waves-orange" v-on:click="getChart">Compare</button>
+        <!-- <div  class="right-align"> -->
+            <a id="addButton" href="#" class="btn-floating btn-small waves-effect waves-teal orange">
+                <i class="material-icons mouse-pointer right-align" v-on:click="addRow">add</i>
             </a>
+        <!-- </div> -->
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <canvas id="myChart" width="400" height="200"></canvas>
+            <!-- <section id="app" class="section">
+                <h4>{{ message }}</h4>
+                    <graph-bar
+                    :labels="labels"
+                    :values="votes"
+                    type="bar"
+                >
+                </graph-bar>
+            </section> -->
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
         </div>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
     <script src="js/mhcalc2.js"></script>
 </body>

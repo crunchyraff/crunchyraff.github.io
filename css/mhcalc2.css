@@ -13,6 +13,20 @@
     --shadow: 0 5px 15px rgba(24, 24, 24, 0.77);
 }
 
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    margin-top: 10px;
+}
+
+th {
+    padding: 3px 5px;
+    border: 1px solid #eee;
+}
+
 .mouse-pointer {
     cursor: pointer;
     user-select: none;
@@ -32,6 +46,18 @@ select {
     font-weight: bold;
 }
 
+.btn-row {
+    padding-top: 10px;
+    display: grid;
+    justify-content: space-between;
+    grid-template: 1fr 10fr 1fr;
+    /* flex-direction: column; */
+}
+
+#chart-btn {
+    grid-column: 1;
+}
+
 #addButton {
-    margin: 8px 10px 0 0;
+    grid-column: 12;
 }
