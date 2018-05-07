@@ -45,7 +45,7 @@ body {
     flex-direction: column;
     justify-content: flex-end;
     text-align: center;
-    color: var(--light);
+    color: var(--lightTransparent);
     margin: auto;
     /* font-weight: bold; */
     font-size: .6em;
