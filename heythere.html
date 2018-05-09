@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,8 +11,19 @@
     <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <link rel="stylesheet" href="css/heythere.css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118927018-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-118927018-1');
+    </script>
+
     <title>Coffee</title>
 </head>
+
 <body id='body' onload="init()">
     <div class="bgcover"></div>
 
@@ -23,19 +35,30 @@
     </div>
 
     <div id="info-main" class="info-card">
-        <div class="info-top pointer" onclick="toggle()"><i id="about-open" class="fa fa-question"></i></div>
+        <div class="info-top pointer" onclick="toggle()">
+            <i id="about-open" class="fa fa-question"></i>
+        </div>
         <div class='info-text info-1'>Contact me</div>
         <!-- <div class='info-text info-2'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus voluptate sint praesentium vitae architecto deserunt.</div>         -->
         <div class="info-text info-2">
             <ul class='info-list'>
-                <li><i class="fa fa-fw fa-envelope"></i> rafael.orvin@gmail.com</li>
-                <li><a href="https://twitter.com/raffchua"><i class="fab fa-twitter fa-fw"></i> Twitter</a></li>
-                <li><a href="https://facebook.com/raffchua"><i class="fab fa-facebook fa-fw"></i> Facebook</a></li>
-                <li><i class="fa fa-fw fa-coffee"></i> Coffee</li>
+                <li>
+                    <i class="fa fa-fw fa-envelope"></i> rafael.orvin@gmail.com</li>
+                <li>
+                    <a href="https://twitter.com/raffchua">
+                        <i class="fab fa-twitter fa-fw"></i> Twitter</a>
+                </li>
+                <li>
+                    <a href="https://facebook.com/raffchua">
+                        <i class="fab fa-facebook fa-fw"></i> Facebook</a>
+                </li>
+                <li>
+                    <i class="fa fa-fw fa-coffee"></i> Coffee</li>
                 <!-- <li><i class="fa fa-fw fa-comments"></i> Let's talk</li> -->
             </ul>
         </div>
     </div>
     <script src="js/main.js"></script>
 </body>
+
 </html>
