@@ -178,7 +178,7 @@ Vue.component('custom-row', {
                 nPow /= nTyp;
                 if (nTyp == 'bow' || nTyp == 'lbg' || nTyp == 'hbg') {
                     nSha = 1;
-                }
+                };
                 var cpt = ((nPow + (nPow * (nAff / 100)) * nBoo) * nSha).toFixed(2);
                 this.item.computed = cpt;
                 return isNaN(cpt) ? 0 : cpt;
