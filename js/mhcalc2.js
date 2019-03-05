@@ -82,12 +82,12 @@ Vue.component('custom-row', {
         return {
             selected: 1.05,
             options: [
-                { text: 'Red', value: 0.25, bgcolor: 'red' },
-                { text: 'Orange', value: 0.5, bgcolor: 'orange' },
-                { text: 'Yellow', value: 0.75, bgcolor: 'yellow' },
+                { text: 'Red', value: 0.5, bgcolor: 'red' },
+                { text: 'Orange', value: 0.75, bgcolor: 'orange' },
+                { text: 'Yellow', value: 1, bgcolor: 'yellow' },
                 { text: 'Green', value: 1.05, bgcolor: 'green' },
                 { text: 'Blue', value: 1.2, bgcolor: 'blue' },
-                { text: 'White', value: 1.32, bgcolor: '' }
+                { text: 'White', value: 1.32, bgcolor: 'white' }
             ],
             weapons: [
                 { text: 'True Raw', value: 'raw', mult: 1 },
@@ -190,13 +190,13 @@ Vue.component('custom-row', {
         selectBG: function () {
             var bgc = 'green';
             switch (this.item.sharpness) {
-                case .25:
+                case .5:
                     bgc = 'red';
                     break;
-                case .5:
+                case .75:
                     bgc = 'orange';
                     break;
-                case .75:
+                case 1:
                     bgc = 'yellow';
                     break;
                 case 1.05:
