@@ -175,8 +175,9 @@ Vue.component('custom-row', {
                 var nSha = parseFloat(this.item.sharpness);
                 var nBoo = parseFloat(0.25 + (0.05 * parseFloat(this.item.boost)));
                 var nTyp = getMult(this.item.type);
+                var nTxt = this.item.type;
                 nPow /= nTyp;
-                if (nTyp == 'bow' || nTyp == 'lbg' || nTyp == 'hbg') {
+                if (nTxt == 'bow' || nTxt == 'lbg' || nTxt == 'hbg') {
                     nSha = 1;
                 };
                 var cpt = ((nPow + (nPow * (nAff / 100)) * nBoo) * nSha).toFixed(2);
