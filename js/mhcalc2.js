@@ -87,7 +87,7 @@ Vue.component('custom-row', {
                 { text: 'Yellow', value: 1, bgcolor: 'yellow' },
                 { text: 'Green', value: 1.05, bgcolor: 'green' },
                 { text: 'Blue', value: 1.2, bgcolor: 'blue' },
-                { text: 'White', value: 1.32, bgcolor: 'white' }
+                { text: 'White', value: 1.32, bgcolor: 'white' },
             ],
             weapons: [
                 { text: 'True Raw', value: 'raw', mult: 1 },
