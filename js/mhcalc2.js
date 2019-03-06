@@ -234,13 +234,21 @@ var getChartButton = new Vue({
             var cLabels = [];
             var cColors = [];
             var cBorders = [];
-            var i = 0;
+            var i = 0, nMax = 0, nMin = 0;
+
+            cRowExample.items.forEach((e) => {
+                if(e.computed > nMax)
+                    nMax = e.computed;
+                if(nMin == 0 || nMin > e.computed)
+                    nMin = e.computed;
+            });
+
             cRowExample.items.forEach((e) => {
                 i++;
                 cData.push(e.computed);
                 cLabels.push(e.label == '' ? i : e.label);
-                cColors.push('rgba(255, 99, 132, 0.2)',);
-                cBorders.push('rgba(255,99,132,1)');
+                cColors.push(`rgba(255, 99, 132, ${0.6 * ((e.computed - nMin + 10) / (nMax - nMin + 1))})`,);
+                cBorders.push(`rgba(255, 99, 132, ${1 * ((e.computed - nMin + 10) / (nMax - nMin + 1))})`);
             });
             // cRowExample.items.forEach((i)=>{console.log(i.type)});
             var ctx = document.getElementById("myChart").getContext('2d');
@@ -261,7 +269,7 @@ var getChartButton = new Vue({
                     scales: {
                         yAxes: [{
                             ticks: {
-                                beginAtZero: true
+                                beginAtZero: false,
                             }
                         }]
                     }
