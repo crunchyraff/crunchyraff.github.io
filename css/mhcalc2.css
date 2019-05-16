@@ -16,6 +16,19 @@
 html, body {
     margin: 0;
     padding: 0;
+    cursor: url(https://i.imgur.com/82FjyBQ.png) 0 16, auto;
+}
+
+#canvas {
+  display: block;
+  position: absolute;
+  background: var(--secondary);
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  
 }
 
 table {

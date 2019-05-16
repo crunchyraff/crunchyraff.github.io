@@ -346,3 +346,138 @@ function getMult(val) {
     return mul;
 }
 
+//******************************************************************************************************** */
+
+window.onload = function(){
+    var idleTimer = null;
+    var idleState = true;
+    var idleWait = 3000;
+      var canvas = document.getElementById("canvas");
+      var ctx = canvas.getContext("2d");
+      
+      //Make the canvas occupy the full page
+      var W = window.innerWidth, H = window.innerHeight;
+      canvas.width = W;
+      canvas.height = H;
+      
+      var particles = [];
+      var mouse = {};
+      
+      //Lets create some particles now
+      var particle_count = 50;
+      for(var i = 0; i < particle_count; i++)
+      {
+          particles.push(new particle());
+      }
+      
+      //finally some mouse tracking
+      window.addEventListener('mousemove', track_mouse, false);
+    
+      
+  /*  $(document).mouseup( function() {
+        idleState = false;
+      });
+      $(document).mousedown( function() {
+        idleState = false;
+      });*/
+    
+      function track_mouse(e)
+      {
+          //since the canvas = full page the position of the mouse 
+          //relative to the document will suffice
+      clearTimeout(idleTimer);
+          mouse.x = e.pageX;
+          mouse.y = e.pageY;
+      document.onmousemove = function(e){
+          idleState = false;
+      }
+      
+      
+      idleTimer = setTimeout(function () { 
+              idleState = true;
+      }, idleWait);
+      }
+      
+      function particle()
+      {
+          //speed, life, location, life, colors
+          //speed.x range = -2.5 to 2.5 
+          //speed.y range = -15 to -5 to make it move upwards
+          //lets change the Y speed to make it look like a flame
+          this.speed = {x: 5 + Math.random()*10, y: -5 + Math.random()*10};
+          //location = mouse coordinates
+          //Now the flame follows the mouse coordinates
+          if(mouse.x && mouse.y)
+          {
+              this.location = {x: mouse.x + 6, y: mouse.y + 2};
+          }
+          else
+          {
+              this.location = {x: W/2, y: H/2};
+          }
+  //    if (idleState == true) { 
+  //   	this.radius = 0;
+  //      this.life = 0;
+  //      this.location = {x: null, y: null};
+  //    }
+  //    else
+  //    {
+        this.radius = 3+Math.random()*7;
+  //      this.life = 10+Math.random()*100;
+  //    }
+          //radius range = 10-30
+  // 		this.radius = 10+Math.random()*15;
+          //life range = 20-30
+          this.life = 20+Math.random()*10;
+          this.remaining_life = this.life - 10;
+          //colors
+          this.r = Math.round(255);
+          this.g = Math.round(140);
+          this.b = Math.round(100);
+      }
+      
+      function draw()
+      {
+          //Painting the canvas black
+          //Time for lighting magic
+          //particles are painted with "lighter"
+          //In the next frame the background is painted normally without blending to the 
+          //previous frame
+  // 		ctx.globalCompositeOperation = "source-over";
+      ctx.globalCompositeOperation = 'destination-out';
+          ctx.fillStyle = 'rgba(0, 0, 0, 0.25)';
+          ctx.fillRect(0, 0, W, H);
+          ctx.globalCompositeOperation = "lighter";
+          
+          for(var i = 0; i < particles.length; i++)
+          {
+              var p = particles[i];
+              ctx.beginPath();
+              //changing opacity according to the life.
+              //opacity goes to 0 at the end of life of a particle
+              p.opacity = Math.round(p.remaining_life/p.life*80)/100
+              //a gradient instead of white fill
+              var gradient = ctx.createRadialGradient(p.location.x, p.location.y, 0, p.location.x, p.location.y, p.radius);
+              gradient.addColorStop(0, "rgba("+p.r+", "+p.g+", "+p.b+", "+p.opacity+")");
+              gradient.addColorStop(0.5, "rgba("+p.r+", "+p.g+", "+p.b+", "+p.opacity+")");
+              gradient.addColorStop(1, "rgba("+p.r+", "+p.g+", "+p.b+", 0)");
+              ctx.fillStyle = gradient;
+              ctx.arc(p.location.x, p.location.y, p.radius, Math.PI*2, false);
+              ctx.fill();
+              
+              //lets move the particles
+              p.remaining_life -= .4;
+              p.radius -= .2;
+              p.location.x += p.speed.x / 2;
+              p.location.y += p.speed.y / 4;
+              
+              //regenerate particles
+              if(p.remaining_life < 0 || p.radius < 0)
+              {
+                  //a brand new particle replacing the dead one
+                  particles[i] = new particle();
+              }
+          }
+      }
+          setInterval(draw, 10);
+  }
