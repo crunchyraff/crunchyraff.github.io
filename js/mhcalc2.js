@@ -88,6 +88,7 @@ Vue.component('custom-row', {
                 { text: 'Green', value: 1.05, bgcolor: 'green' },
                 { text: 'Blue', value: 1.2, bgcolor: 'blue' },
                 { text: 'White', value: 1.32, bgcolor: 'white' },
+                { text: 'Purple', value: 1.39, bgcolor: 'purple' },
             ],
             weapons: [
                 { text: 'True Raw', value: 'raw', mult: 1 },
@@ -208,6 +209,9 @@ Vue.component('custom-row', {
                     break;
                 case 1.32:
                     bgc = 'white';
+                    break;
+                case 1.39:
+                    bgc = 'purple';
                     break;
                 default:
             }
