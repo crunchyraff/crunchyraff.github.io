@@ -59,7 +59,7 @@
     <!--application -->
     <div class="container" id="customRowExample">
         <table id="main-table" class="striped highlight centered z-depth-2">
-            <tr class="row">
+            <tr class="row" id="tableheader">
                 <th>Label</th>
                 <th>Attack</th>
                 <th>Type</th>
@@ -78,10 +78,23 @@
         <!-- Modal Trigger -->
         <button id="chart-btn" data-target="modal1" class="btn modal-trigger waves-effect waves-orange" v-on:click="getChart">Compare</button>
         <!-- <div  class="right-align"> -->
+
+
         <a id="addButton" href="#" class="btn-floating btn-small waves-effect waves-teal orange">
             <i class="material-icons mouse-pointer right-align" v-on:click="addRow">add</i>
         </a>
         <!-- </div> -->
+    </div>
+
+    <div class="fixed-action-btn">
+        <div class="switch">
+            <label>
+                praise
+                <input type="checkbox" id="onetruebow">
+                <span class="lever"></span>
+            </label>
+        </div>
+        <!-- <a class="btn-floating"></a> -->
     </div>
 
     <!-- Modal Structure -->

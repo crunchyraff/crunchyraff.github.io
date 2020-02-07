@@ -225,7 +225,7 @@ var addRowButton = new Vue({
     methods: {
         addRow: function () {
             cRowExample.items.push(Object.assign({}, cRowExample.items[cRowExample.items.length - 1]));
-            // cRowExample.items.forEach((i)=>{console.log(i.type)});
+            // cRowExample.items.forEach((i)=>{console.log(i)});
         }
     }
 })
@@ -356,8 +356,11 @@ window.onload = function(){
     var idleTimer = null;
     var idleState = true;
     var idleWait = 3000;
-      var canvas = document.getElementById("canvas");
-      var ctx = canvas.getContext("2d");
+    var otb;
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+
+    $("#tableheader").next("input").focus();    
       
       //Make the canvas occupy the full page
       var W = window.innerWidth, H = window.innerHeight;
@@ -368,7 +371,7 @@ window.onload = function(){
       var mouse = {};
       
       //Lets create some particles now
-      var particle_count = 50;
+      var particle_count = 20;
       for(var i = 0; i < particle_count; i++)
       {
           particles.push(new particle());
@@ -385,8 +388,7 @@ window.onload = function(){
         idleState = false;
       });*/
     
-      function track_mouse(e)
-      {
+    function track_mouse(e){
           //since the canvas = full page the position of the mouse 
           //relative to the document will suffice
       clearTimeout(idleTimer);
@@ -398,9 +400,9 @@ window.onload = function(){
       
       
       idleTimer = setTimeout(function () { 
-              idleState = true;
-      }, idleWait);
-      }
+            idleState = true;
+        }, idleWait);
+    }
       
       function particle()
       {
@@ -440,18 +442,18 @@ window.onload = function(){
           this.b = Math.round(100);
       }
       
-      function draw()
-      {
+    function draw()
+    {
           //Painting the canvas black
           //Time for lighting magic
           //particles are painted with "lighter"
           //In the next frame the background is painted normally without blending to the 
           //previous frame
   // 		ctx.globalCompositeOperation = "source-over";
-      ctx.globalCompositeOperation = 'destination-out';
-          ctx.fillStyle = 'rgba(0, 0, 0, 0.25)';
-          ctx.fillRect(0, 0, W, H);
-          ctx.globalCompositeOperation = "lighter";
+        ctx.globalCompositeOperation = 'destination-out';
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.25)';
+        ctx.fillRect(0, 0, W, H);
+        ctx.globalCompositeOperation = "lighter";
           
           for(var i = 0; i < particles.length; i++)
           {
@@ -483,5 +485,13 @@ window.onload = function(){
               }
           }
       }
-          setInterval(draw, 10);
-  }
+    $('#onetruebow').change(function(){
+        if($(this).is(':checked')){
+            otb = setInterval(draw, 10);
+        } else {
+            clearInterval(otb);
+            ctx.clearRect(0, 0, W, H);
+
+        }
+    });
+}
